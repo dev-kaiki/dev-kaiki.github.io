@@ -1,0 +1,83 @@
+[
+  {
+    "title": "SprintBoard — Kanban + Auth + Realtime",
+    "description": "Quadro estilo Trello com drag-and-drop, permissões por workspace, comentários e updates em tempo real.",
+    "stack": "Next.js • NestJS • Postgres • Docker",
+    "tags": [
+      "Fullstack",
+      "Realtime",
+      "Auth",
+      "Postgres",
+      "Docker",
+      "RBAC"
+    ],
+    "demoUrl": "",
+    "repoUrl": "https://github.com/dev-kaiki/sprintboard"
+  },
+  {
+    "title": "AuthKit — Starter Backend (JWT/Refresh + RBAC)",
+    "description": "Backend pronto para produção: JWT/refresh, RBAC, rate limit, validações, Swagger e testes.",
+    "stack": "NestJS • Postgres • Swagger",
+    "tags": [
+      "Backend",
+      "Auth",
+      "Security",
+      "RBAC",
+      "Swagger"
+    ],
+    "demoUrl": "",
+    "repoUrl": "https://github.com/dev-kaiki/authkit"
+  },
+  {
+    "title": "FileVault — Upload Seguro + Presigned URL (S3/MinIO)",
+    "description": "Upload com links temporários, validação, organização por pastas/tags e auditoria de acesso.",
+    "stack": "NestJS • MinIO • Postgres • Docker",
+    "tags": [
+      "Backend",
+      "Storage",
+      "Security",
+      "Docker"
+    ],
+    "demoUrl": "",
+    "repoUrl": "https://github.com/dev-kaiki/filevault"
+  },
+  {
+    "title": "ReportForge — Gerador de PDF + Histórico",
+    "description": "Relatórios com templates, export JSON, histórico por cliente e PDF profissional.",
+    "stack": "Next.js • NestJS • Postgres",
+    "tags": [
+      "Fullstack",
+      "PDF",
+      "CRUD",
+      "Templates"
+    ],
+    "demoUrl": "",
+    "repoUrl": "https://github.com/dev-kaiki/reportforge"
+  },
+  {
+    "title": "ShopPulse — Dashboard Admin (KPIs + Filtros)",
+    "description": "Admin com KPIs, gráficos, filtros, export CSV e API com paginação e auditoria.",
+    "stack": "Next.js • NestJS • Postgres",
+    "tags": [
+      "Fullstack",
+      "Dashboard",
+      "Analytics",
+      "CRUD"
+    ],
+    "demoUrl": "",
+    "repoUrl": "https://github.com/dev-kaiki/shoppulse"
+  },
+  {
+    "title": "QueueOps — Jobs + Retries + Painel",
+    "description": "Fila de jobs com retries, backoff, dead-letter e painel de monitoramento.",
+    "stack": "NestJS • BullMQ • Redis",
+    "tags": [
+      "Backend",
+      "Queue",
+      "Redis",
+      "Observability"
+    ],
+    "demoUrl": "",
+    "repoUrl": "https://github.com/dev-kaiki/queueops"
+  }
+]

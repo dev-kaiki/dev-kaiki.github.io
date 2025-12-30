@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaiki — Fullstack Developer</title>
+  <meta name="description" content="Portfólio Fullstack: demos, APIs, bancos, Docker e CI/CD. Next.js, NestJS, PostgreSQL, Redis." />
+  <meta name="theme-color" content="#0b0f17" />
+
+  <!-- Open Graph (preview bonito ao colar o link) -->
+  <meta property="og:title" content="Kaiki — Fullstack Developer" />
+  <meta property="og:description" content="Demos fullstack profissionais: auth, realtime, upload, filas, dashboards, deploy e docs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="container header">
+    <div class="brand">
+      <div class="avatar">
+        <img src="assets/avatar.png" alt="Avatar" onerror="this.style.display='none'" />
+      </div>
+      <div>
+        <h1>Kaiki</h1>
+        <p class="subtitle">Fullstack Developer • Web • APIs • Databases • Docker • CI/CD</p>
+        <div class="chips">
+          <span class="chip">Next.js</span>
+          <span class="chip">NestJS</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Redis</span>
+          <span class="chip">Docker</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="links">
+      <a href="https://github.com/dev-kaiki" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/dev-kaiki" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="mailto:kaikiiquadros091o@gmail.com">Email</a>
+      <a href="https://wa.me/5516991666951" target="_blank" rel="noreferrer">WhatsApp</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Projetos e demos fullstack profissionais</h2>
+      <p>
+        Aqui estão meus demos focados em <b>arquitetura</b>, <b>qualidade</b> e <b>entrega</b>:
+        autenticação, permissões, realtime, upload seguro, filas, dashboards e deploy.
+      </p>
+
+      <div class="controls">
+        <input id="search" class="input" placeholder="Buscar por nome, stack, tags..." />
+        <div id="tagRow" class="tagRow"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionTitle">
+        <h3>Projetos em destaque</h3>
+        <p class="muted">Edite os cards em <code>projects.json</code>. Se não tiver “Live Demo” ainda, deixe <code>demoUrl</code> vazio.</p>
+      </div>
+
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h3>Disponível para freelas e projetos</h3>
+        <p class="muted">Correção de bugs, features, APIs, bancos, deploy, manutenção e evolução contínua.</p>
+      </div>
+      <div class="ctaButtons">
+        <a class="btn primary" href="mailto:kaikiiquadros091o@gmail.com">Me chamar por Email</a>
+        <a class="btn" href="https://wa.me/5516991666951" target="_blank" rel="noreferrer">WhatsApp</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Kaiki • https://dev-kaiki.github.io</p>
+    </footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
