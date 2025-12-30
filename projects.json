@@ -2,7 +2,7 @@
   {
     "slug": "authkit",
     "title": "AuthKit",
-    "tagline": "JWT/Refresh, RBAC, Swagger, Prisma",
+    "tagline": "Auth starter: JWT/Refresh, RBAC, Swagger, Prisma",
     "repo": "https://github.com/dev-kaiki/authkit",
     "live_url": "https://dev-kaiki-authkit.vercel.app",
     "docs_url": "https://dev-kaiki-authkit-api.onrender.com/docs",
@@ -16,7 +16,7 @@
   {
     "slug": "filevault",
     "title": "FileVault",
-    "tagline": "Secure upload: presigned URLs + storage abstraction",
+    "tagline": "Upload seguro: presigned URLs + storage abstraction",
     "repo": "https://github.com/dev-kaiki/filevault",
     "live_url": "https://dev-kaiki-filevault.vercel.app",
     "docs_url": "https://dev-kaiki-filevault-api.onrender.com/docs",
@@ -30,7 +30,7 @@
   {
     "slug": "queueops",
     "title": "QueueOps",
-    "tagline": "Jobs, retries/backoff, observability + panel",
+    "tagline": "Jobs, retries/backoff, observabilidade e painel",
     "repo": "https://github.com/dev-kaiki/queueops",
     "live_url": "https://dev-kaiki-queueops.vercel.app",
     "docs_url": "https://dev-kaiki-queueops-api.onrender.com/docs",
@@ -44,7 +44,7 @@
   {
     "slug": "reportforge",
     "title": "ReportForge",
-    "tagline": "Reports + history + export (PDF/JSON)",
+    "tagline": "Relatorios + historico + export (PDF/JSON)",
     "repo": "https://github.com/dev-kaiki/reportforge",
     "live_url": "https://dev-kaiki-reportforge.vercel.app",
     "docs_url": "https://dev-kaiki-reportforge-api.onrender.com/docs",
@@ -58,7 +58,7 @@
   {
     "slug": "shoppulse",
     "title": "ShopPulse",
-    "tagline": "Admin dashboard: filters, KPIs and export",
+    "tagline": "Dashboard admin com filtros, KPIs e export",
     "repo": "https://github.com/dev-kaiki/shoppulse",
     "live_url": "https://dev-kaiki-shoppulse.vercel.app",
     "docs_url": "https://dev-kaiki-shoppulse-api.onrender.com/docs",
@@ -72,7 +72,7 @@
   {
     "slug": "sprintboard",
     "title": "SprintBoard",
-    "tagline": "Trello-like Kanban focused on UX",
+    "tagline": "Kanban estilo Trello com foco em UX e produtividade",
     "repo": "https://github.com/dev-kaiki/sprintboard",
     "live_url": "https://dev-kaiki-sprintboard.vercel.app",
     "docs_url": "https://dev-kaiki-sprintboard-api.onrender.com/docs",

@@ -1,285 +1,127 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>dev-kaiki • Portfolio</title>
-  <meta name="description" content="Portfolio de projetos fullstack (Next.js + NestJS + Prisma). Demos com links Live e Swagger." />
-  <meta name="theme-color" content="#0b1020" />
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0ea5e9" />
+  <title>dev-kaiki • Portfólio</title>
+  <meta name="description" content="Portfólio de projetos (Fullstack • IA • Eng. Elétrica/Eletrônica). Demos com 1 clique." />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="./" aria-label="Home">
-        <span class="brand__mark" aria-hidden="true"></span>
-        <span class="brand__text">dev-kaiki</span>
+    <div class="container row">
+      <a class="brand" href="./">
+        <span class="dot"></span>
+        <span>dev-kaiki</span>
       </a>
 
       <nav class="nav">
         <a href="#projects">Projetos</a>
         <a href="#about">Sobre</a>
-        <a href="#contact">Contato</a>
+        <a href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
       </nav>
 
-      <div class="topbar__actions">
-        <button id="themeBtn" class="iconbtn" type="button" title="Alternar tema" aria-label="Alternar tema">
-          <span id="themeIcon" aria-hidden="true">🌙</span>
-        </button>
-        <a class="iconbtn" href="https://github.com/dev-kaiki" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">⌁</a>
-      </div>
+      <button id="themeBtn" class="icon-btn" aria-label="Alternar tema" title="Alternar tema">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+      </button>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__left">
-          <p class="pill">Fullstack • Software • Engenharia</p>
-          <h1>Portfolio profissional com demos “1 clique”.</h1>
-          <p class="lead">
-            Projetos prontos para abrir: <strong>Live</strong> (Vercel) e <strong>Swagger</strong> (Render).
-            Código limpo, arquitetura sólida e foco em entregas reais.
-          </p>
-
-          <div class="cta">
-            <a class="btn" href="#projects">Ver projetos</a>
-            <a class="btn btn--ghost" href="https://www.linkedin.com/in/kaiki-ferreira" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-
-          <div class="chips" aria-label="Tecnologias">
-            <span class="chip">Next.js</span>
-            <span class="chip">NestJS</span>
-            <span class="chip">Prisma</span>
-            <span class="chip">Postgres</span>
-            <span class="chip">Docker</span>
-          </div>
-        </div>
-
-        <div class="hero__right" aria-hidden="true">
-          <div class="card3d">
-            <div class="card3d__header">
-              <span class="dot dot--g"></span>
-              <span class="dot dot--y"></span>
-              <span class="dot dot--r"></span>
-            </div>
-            <div class="card3d__body">
-              <div class="code">
-                <div><span class="k">GET</span> <span class="u">/health</span> <span class="ok">200</span></div>
-                <div><span class="k">POST</span> <span class="u">/auth/login</span></div>
-                <div><span class="k">GET</span> <span class="u">/docs</span> <span class="ok">Swagger</span></div>
-                <div class="sep"></div>
-                <div><span class="cm">// deploy: 1 clique</span></div>
-                <div><span class="cm">// foco: UX + API bem feita</span></div>
-              </div>
-              <div class="stats">
-                <div class="stat">
-                  <div class="stat__n">6</div>
-                  <div class="stat__t">demos</div>
-                </div>
-                <div class="stat">
-                  <div class="stat__n">Live</div>
-                  <div class="stat__t">Vercel</div>
-                </div>
-                <div class="stat">
-                  <div class="stat__n">Docs</div>
-                  <div class="stat__t">Render</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="glow glow--a"></div>
-          <div class="glow glow--b"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
       <div class="container">
-        <div class="section__head">
+        <div class="hero-card">
           <div>
-            <h2>Projetos em destaque</h2>
-            <p class="muted">Filtre e abra as demos instantaneamente.</p>
+            <p class="kicker">Fullstack • IA • Eng. Elétrica/Eletrônica</p>
+            <h1>Projetos prontos para abrir <span class="accent">com 1 clique</span>.</h1>
+            <p class="subtitle">
+              Demos com links Live + Swagger, pensados para avaliação rápida (recrutador/cliente).
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#projects">Ver projetos</a>
+              <a class="btn btn-outline" href="https://www.linkedin.com/in/kaiki-ferreira" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn btn-outline" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
+            </div>
           </div>
 
-          <div class="controls">
-            <div class="search">
-              <span class="search__icon" aria-hidden="true">⌕</span>
-              <input id="q" type="search" placeholder="Buscar projeto, stack..." autocomplete="off" />
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-num" id="statCount">—</div>
+              <div class="stat-label">projetos</div>
             </div>
-            <select id="stackFilter" class="select" aria-label="Filtrar por stack">
-              <option value="">Stack (todas)</option>
+            <div class="stat">
+              <div class="stat-num">Next.js</div>
+              <div class="stat-label">web</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">NestJS</div>
+              <div class="stat-label">api</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">Prisma</div>
+              <div class="stat-label">db</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls" id="projects">
+          <div class="control">
+            <label for="q">Buscar</label>
+            <input id="q" type="search" placeholder="ex: kanban, jwt, upload, jobs..." autocomplete="off" />
+          </div>
+
+          <div class="control">
+            <label for="stack">Stack</label>
+            <select id="stack">
+              <option value="">Todas</option>
             </select>
-            <select id="sort" class="select" aria-label="Ordenar">
-              <option value="featured">Ordem (padrão)</option>
-              <option value="az">A → Z</option>
-              <option value="za">Z → A</option>
+          </div>
+
+          <div class="control">
+            <label for="sort">Ordenar</label>
+            <select id="sort">
+              <option value="title">Nome (A-Z)</option>
+              <option value="recent">Mais relevante</option>
             </select>
           </div>
         </div>
 
-        <div id="error" class="error hidden"></div>
-        <div id="grid" class="grid" aria-live="polite">
-          <div class="skeleton">Carregando projetos…</div>
-        </div>
+        <div class="grid" id="grid"></div>
 
-        <div class="mini muted">
-          Dica: se algum link Live/Swagger ainda não estiver pronto, o botão não aparece.
+        <div class="notice" id="notice" hidden>
+          <strong>Ops:</strong> não consegui carregar <code>projects.json</code>. Mostrando lista embutida.
         </div>
       </div>
     </section>
 
-    <section id="about" class="section section--alt">
-      <div class="container about">
-        <div class="about__card">
-          <h2>Sobre</h2>
-          <p class="muted">
-            Desenvolvedor fullstack focado em projetos que funcionam no mundo real: auth, uploads, filas, dashboards e relatórios.
-            Também atuo com engenharia elétrica/eletrônica e integração hardware/software.
-          </p>
-          <div class="about__grid">
-            <div class="about__item">
-              <div class="about__k">Foco</div>
-              <div class="about__v">API limpa, UX, deploy simples</div>
-            </div>
-            <div class="about__item">
-              <div class="about__k">Stack</div>
-              <div class="about__v">Next.js • NestJS • Prisma • Postgres</div>
-            </div>
-            <div class="about__item">
-              <div class="about__k">Entregas</div>
-              <div class="about__v">Demos 1 clique + documentação Swagger</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about__side">
-          <div class="sidecard">
-            <div class="sidecard__title">Disponível para</div>
-            <ul class="sidecard__list">
-              <li>Freelas fullstack</li>
-              <li>APIs + integração</li>
-              <li>Dashboards e relatórios</li>
-              <li>Projetos de automação</li>
-            </ul>
-            <a class="btn btn--ghost btn--full" href="#contact">Falar comigo</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
+    <section class="about" id="about">
       <div class="container">
-        <div class="contact">
-          <div>
-            <h2>Contato</h2>
-            <p class="muted">Quer ver uma demo específica ou discutir um projeto? Me chama.</p>
-          </div>
-          <div class="contact__actions">
-            <a class="btn" href="mailto:kaikiiquadros091o@gmail.com">Email</a>
-            <a class="btn btn--ghost" href="https://wa.me/5516991666951" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn btn--ghost" href="https://www.linkedin.com/in/kaiki-ferreira" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn--ghost" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
-          </div>
+        <h2>Sobre</h2>
+        <p class="muted">
+          Eu construo soluções fullstack (web + API) com foco em experiência (UX), qualidade de código e deploy simples.
+          Também atuo com automação/eletrônica e integração hardware + software.
+        </p>
+
+        <div class="about-actions">
+          <a class="btn btn-outline" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">Ver GitHub</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/kaiki-ferreira" target="_blank" rel="noopener">Ver LinkedIn</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
+    <div class="container row">
       <span class="muted">© <span id="year"></span> dev-kaiki</span>
-      <span class="muted">Feito com HTML/CSS/JS (GitHub Pages)</span>
+      <span class="muted">Feito com HTML/CSS/JS puro (GitHub Pages).</span>
     </div>
   </footer>
 
-  <script id="projects-fallback" type="application/json">[
-  {
-    "slug": "authkit",
-    "title": "AuthKit",
-    "tagline": "JWT/Refresh, RBAC, Swagger, Prisma",
-    "repo": "https://github.com/dev-kaiki/authkit",
-    "live_url": "https://dev-kaiki-authkit.vercel.app",
-    "docs_url": "https://dev-kaiki-authkit-api.onrender.com/docs",
-    "stack": [
-      "Next.js",
-      "NestJS",
-      "Prisma",
-      "Postgres"
-    ]
-  },
-  {
-    "slug": "filevault",
-    "title": "FileVault",
-    "tagline": "Secure upload: presigned URLs + storage abstraction",
-    "repo": "https://github.com/dev-kaiki/filevault",
-    "live_url": "https://dev-kaiki-filevault.vercel.app",
-    "docs_url": "https://dev-kaiki-filevault-api.onrender.com/docs",
-    "stack": [
-      "Next.js",
-      "NestJS",
-      "Prisma",
-      "Postgres"
-    ]
-  },
-  {
-    "slug": "queueops",
-    "title": "QueueOps",
-    "tagline": "Jobs, retries/backoff, observability + panel",
-    "repo": "https://github.com/dev-kaiki/queueops",
-    "live_url": "https://dev-kaiki-queueops.vercel.app",
-    "docs_url": "https://dev-kaiki-queueops-api.onrender.com/docs",
-    "stack": [
-      "Next.js",
-      "NestJS",
-      "Prisma",
-      "Postgres"
-    ]
-  },
-  {
-    "slug": "reportforge",
-    "title": "ReportForge",
-    "tagline": "Reports + history + export (PDF/JSON)",
-    "repo": "https://github.com/dev-kaiki/reportforge",
-    "live_url": "https://dev-kaiki-reportforge.vercel.app",
-    "docs_url": "https://dev-kaiki-reportforge-api.onrender.com/docs",
-    "stack": [
-      "Next.js",
-      "NestJS",
-      "Prisma",
-      "Postgres"
-    ]
-  },
-  {
-    "slug": "shoppulse",
-    "title": "ShopPulse",
-    "tagline": "Admin dashboard: filters, KPIs and export",
-    "repo": "https://github.com/dev-kaiki/shoppulse",
-    "live_url": "https://dev-kaiki-shoppulse.vercel.app",
-    "docs_url": "https://dev-kaiki-shoppulse-api.onrender.com/docs",
-    "stack": [
-      "Next.js",
-      "NestJS",
-      "Prisma",
-      "Postgres"
-    ]
-  },
-  {
-    "slug": "sprintboard",
-    "title": "SprintBoard",
-    "tagline": "Trello-like Kanban focused on UX",
-    "repo": "https://github.com/dev-kaiki/sprintboard",
-    "live_url": "https://dev-kaiki-sprintboard.vercel.app",
-    "docs_url": "https://dev-kaiki-sprintboard-api.onrender.com/docs",
-    "stack": [
-      "Next.js",
-      "NestJS",
-      "Prisma",
-      "Postgres"
-    ]
-  }
-]</script>
-  <script src="./main.js" defer></script>
+  <script src="./main.js"></script>
 </body>
 </html>
