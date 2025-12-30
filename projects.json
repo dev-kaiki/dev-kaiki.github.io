@@ -1,83 +1,86 @@
 [
   {
-    "title": "SprintBoard — Kanban + Auth + Realtime",
-    "description": "Quadro estilo Trello com drag-and-drop, permissões por workspace, comentários e updates em tempo real.",
-    "stack": "Next.js • NestJS • Postgres • Docker",
-    "tags": [
-      "Fullstack",
-      "Realtime",
-      "Auth",
-      "Postgres",
-      "Docker",
-      "RBAC"
-    ],
-    "demoUrl": "",
-    "repoUrl": "https://github.com/dev-kaiki/sprintboard"
+    "slug": "authkit",
+    "title": "AuthKit",
+    "tagline": "Auth starter: JWT/Refresh, RBAC, Swagger, Prisma",
+    "repo": "https://github.com/dev-kaiki/authkit",
+    "live_url": "https://dev-kaiki-authkit.vercel.app",
+    "docs_url": "https://dev-kaiki-authkit-api.onrender.com/docs",
+    "stack": [
+      "Next.js",
+      "NestJS",
+      "Prisma",
+      "Postgres"
+    ]
   },
   {
-    "title": "AuthKit — Starter Backend (JWT/Refresh + RBAC)",
-    "description": "Backend pronto para produção: JWT/refresh, RBAC, rate limit, validações, Swagger e testes.",
-    "stack": "NestJS • Postgres • Swagger",
-    "tags": [
-      "Backend",
-      "Auth",
-      "Security",
-      "RBAC",
-      "Swagger"
-    ],
-    "demoUrl": "",
-    "repoUrl": "https://github.com/dev-kaiki/authkit"
+    "slug": "filevault",
+    "title": "FileVault",
+    "tagline": "Upload seguro: presigned URLs + storage abstraction",
+    "repo": "https://github.com/dev-kaiki/filevault",
+    "live_url": "https://dev-kaiki-filevault.vercel.app",
+    "docs_url": "https://dev-kaiki-filevault-api.onrender.com/docs",
+    "stack": [
+      "Next.js",
+      "NestJS",
+      "Prisma",
+      "Postgres"
+    ]
   },
   {
-    "title": "FileVault — Upload Seguro + Presigned URL (S3/MinIO)",
-    "description": "Upload com links temporários, validação, organização por pastas/tags e auditoria de acesso.",
-    "stack": "NestJS • MinIO • Postgres • Docker",
-    "tags": [
-      "Backend",
-      "Storage",
-      "Security",
-      "Docker"
-    ],
-    "demoUrl": "",
-    "repoUrl": "https://github.com/dev-kaiki/filevault"
+    "slug": "queueops",
+    "title": "QueueOps",
+    "tagline": "Jobs, retries/backoff, observabilidade e painel",
+    "repo": "https://github.com/dev-kaiki/queueops",
+    "live_url": "https://dev-kaiki-queueops.vercel.app",
+    "docs_url": "https://dev-kaiki-queueops-api.onrender.com/docs",
+    "stack": [
+      "Next.js",
+      "NestJS",
+      "Prisma",
+      "Postgres"
+    ]
   },
   {
-    "title": "ReportForge — Gerador de PDF + Histórico",
-    "description": "Relatórios com templates, export JSON, histórico por cliente e PDF profissional.",
-    "stack": "Next.js • NestJS • Postgres",
-    "tags": [
-      "Fullstack",
-      "PDF",
-      "CRUD",
-      "Templates"
-    ],
-    "demoUrl": "",
-    "repoUrl": "https://github.com/dev-kaiki/reportforge"
+    "slug": "reportforge",
+    "title": "ReportForge",
+    "tagline": "Relatórios + histórico + export (PDF/JSON)",
+    "repo": "https://github.com/dev-kaiki/reportforge",
+    "live_url": "https://dev-kaiki-reportforge.vercel.app",
+    "docs_url": "https://dev-kaiki-reportforge-api.onrender.com/docs",
+    "stack": [
+      "Next.js",
+      "NestJS",
+      "Prisma",
+      "Postgres"
+    ]
   },
   {
-    "title": "ShopPulse — Dashboard Admin (KPIs + Filtros)",
-    "description": "Admin com KPIs, gráficos, filtros, export CSV e API com paginação e auditoria.",
-    "stack": "Next.js • NestJS • Postgres",
-    "tags": [
-      "Fullstack",
-      "Dashboard",
-      "Analytics",
-      "CRUD"
-    ],
-    "demoUrl": "",
-    "repoUrl": "https://github.com/dev-kaiki/shoppulse"
+    "slug": "shoppulse",
+    "title": "ShopPulse",
+    "tagline": "Dashboard admin com filtros, KPIs e export",
+    "repo": "https://github.com/dev-kaiki/shoppulse",
+    "live_url": "https://dev-kaiki-shoppulse.vercel.app",
+    "docs_url": "https://dev-kaiki-shoppulse-api.onrender.com/docs",
+    "stack": [
+      "Next.js",
+      "NestJS",
+      "Prisma",
+      "Postgres"
+    ]
   },
   {
-    "title": "QueueOps — Jobs + Retries + Painel",
-    "description": "Fila de jobs com retries, backoff, dead-letter e painel de monitoramento.",
-    "stack": "NestJS • BullMQ • Redis",
-    "tags": [
-      "Backend",
-      "Queue",
-      "Redis",
-      "Observability"
-    ],
-    "demoUrl": "",
-    "repoUrl": "https://github.com/dev-kaiki/queueops"
+    "slug": "sprintboard",
+    "title": "SprintBoard",
+    "tagline": "Kanban estilo Trello com foco em UX e produtividade",
+    "repo": "https://github.com/dev-kaiki/sprintboard",
+    "live_url": "https://dev-kaiki-sprintboard.vercel.app",
+    "docs_url": "https://dev-kaiki-sprintboard-api.onrender.com/docs",
+    "stack": [
+      "Next.js",
+      "NestJS",
+      "Prisma",
+      "Postgres"
+    ]
   }
 ]
