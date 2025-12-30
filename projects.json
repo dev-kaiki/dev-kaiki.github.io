@@ -1,80 +1,56 @@
 [
-    {
-        "live_url":  "https://dev-kaiki-authkit.vercel.app",
-        "slug":  "authkit",
-        "stack":  [
-                      "Next.js",
-                      "NestJS",
-                      "Swagger"
-                  ],
-        "repo":  "https://github.com/dev-kaiki/authkit",
-        "tagline":  "Auth starter: JWT/Refresh, RBAC, Swagger",
-        "title":  "AuthKit",
-        "docs_url":  "https://dev-kaiki-authkit-api.onrender.com/docs"
-    },
-    {
-        "live_url":  "https://dev-kaiki-filevault.vercel.app",
-        "slug":  "filevault",
-        "stack":  [
-                      "Next.js",
-                      "NestJS",
-                      "Swagger"
-                  ],
-        "repo":  "https://github.com/dev-kaiki/filevault",
-        "tagline":  "Secure upload: presigned URLs + storage abstraction",
-        "title":  "FileVault",
-        "docs_url":  "https://dev-kaiki-filevault-api.onrender.com/docs"
-    },
-    {
-        "live_url":  "https://dev-kaiki-queueops.vercel.app",
-        "slug":  "queueops",
-        "stack":  [
-                      "Next.js",
-                      "NestJS",
-                      "Swagger"
-                  ],
-        "repo":  "https://github.com/dev-kaiki/queueops",
-        "tagline":  "Jobs, retries/backoff, observability + panel",
-        "title":  "QueueOps",
-        "docs_url":  "https://dev-kaiki-queueops-api.onrender.com/docs"
-    },
-    {
-        "live_url":  "https://dev-kaiki-reportforge.vercel.app",
-        "slug":  "reportforge",
-        "stack":  [
-                      "Next.js",
-                      "NestJS",
-                      "Swagger"
-                  ],
-        "repo":  "https://github.com/dev-kaiki/reportforge",
-        "tagline":  "Reports + history + export (PDF/JSON)",
-        "title":  "ReportForge",
-        "docs_url":  "https://dev-kaiki-reportforge-api.onrender.com/docs"
-    },
-    {
-        "live_url":  "https://dev-kaiki-shoppulse.vercel.app",
-        "slug":  "shoppulse",
-        "stack":  [
-                      "Next.js",
-                      "NestJS",
-                      "Swagger"
-                  ],
-        "repo":  "https://github.com/dev-kaiki/shoppulse",
-        "tagline":  "Admin dashboard with filters, KPIs and export",
-        "title":  "ShopPulse",
-        "docs_url":  "https://dev-kaiki-shoppulse-api.onrender.com/docs"
-    },
-    {
-        "live_url":  "https://dev-kaiki-sprintboard.vercel.app",
-        "slug":  "sprintboard",
-        "stack":  [
-                      "Next.js",
-                      "NestJS",
-                      "Swagger"
-                  ],
-        "repo":  "https://github.com/dev-kaiki/sprintboard",
-        "tagline":  "Trello-like Kanban focused on UX",
-        "title":  "SprintBoard",
-        "docs_url":  "https://dev-kaiki-sprintboard-api.onrender.com/docs"
-    }
+  {
+    "slug": "authkit",
+    "title": "AuthKit",
+    "tagline": "Auth starter: JWT/Refresh, RBAC, Swagger, Prisma",
+    "repo": "https://github.com/dev-kaiki/authkit",
+    "live_url": "https://dev-kaiki-authkit.vercel.app",
+    "docs_url": "https://dev-kaiki-authkit-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  },
+  {
+    "slug": "filevault",
+    "title": "FileVault",
+    "tagline": "Upload seguro: presigned URLs + storage abstraction",
+    "repo": "https://github.com/dev-kaiki/filevault",
+    "live_url": "https://dev-kaiki-filevault.vercel.app",
+    "docs_url": "https://dev-kaiki-filevault-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  },
+  {
+    "slug": "queueops",
+    "title": "QueueOps",
+    "tagline": "Jobs, retries/backoff, observabilidade e painel",
+    "repo": "https://github.com/dev-kaiki/queueops",
+    "live_url": "https://dev-kaiki-queueops.vercel.app",
+    "docs_url": "https://dev-kaiki-queueops-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  },
+  {
+    "slug": "reportforge",
+    "title": "ReportForge",
+    "tagline": "Relatorios + historico + export (PDF/JSON)",
+    "repo": "https://github.com/dev-kaiki/reportforge",
+    "live_url": "https://dev-kaiki-reportforge.vercel.app",
+    "docs_url": "https://dev-kaiki-reportforge-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  },
+  {
+    "slug": "shoppulse",
+    "title": "ShopPulse",
+    "tagline": "Dashboard admin com filtros, KPIs e export",
+    "repo": "https://github.com/dev-kaiki/shoppulse",
+    "live_url": "https://dev-kaiki-shoppulse.vercel.app",
+    "docs_url": "https://dev-kaiki-shoppulse-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  },
+  {
+    "slug": "sprintboard",
+    "title": "SprintBoard",
+    "tagline": "Kanban estilo Trello com foco em UX e produtividade",
+    "repo": "https://github.com/dev-kaiki/sprintboard",
+    "live_url": "https://dev-kaiki-sprintboard.vercel.app",
+    "docs_url": "https://dev-kaiki-sprintboard-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  }
 ]

@@ -1,86 +1,107 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kaiki — Fullstack Developer</title>
-  <meta name="description" content="Portfólio Fullstack: demos, APIs, bancos, Docker e CI/CD. Next.js, NestJS, PostgreSQL, Redis." />
-  <meta name="theme-color" content="#0b0f17" />
-
-  <!-- Open Graph (preview bonito ao colar o link) -->
-  <meta property="og:title" content="Kaiki — Fullstack Developer" />
-  <meta property="og:description" content="Demos fullstack profissionais: auth, realtime, upload, filas, dashboards, deploy e docs." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og.png" />
-
-  <link rel="stylesheet" href="styles.css" />
+  <title>dev-kaiki | Portfolio</title>
+  <meta name="description" content="Portfolio de demos fullstack (Next.js + NestJS + Prisma) com deploy one-click (Vercel/Render)." />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
+
 <body>
-  <header class="container header">
-    <div class="brand">
-      <div class="avatar">
-        <img src="assets/avatar.png" alt="Avatar" onerror="this.style.display='none'" />
-      </div>
+  <header class="wrap">
+    <div class="hero">
       <div>
-        <h1>Kaiki</h1>
-        <p class="subtitle">Fullstack Developer • Web • APIs • Databases • Docker • CI/CD</p>
-        <div class="chips">
-          <span class="chip">Next.js</span>
-          <span class="chip">NestJS</span>
-          <span class="chip">PostgreSQL</span>
-          <span class="chip">Redis</span>
-          <span class="chip">Docker</span>
+        <h1>dev-kaiki</h1>
+        <p class="muted">
+          Demos fullstack com deploy pronto e links "Live" + "Swagger".
+        </p>
+        <div class="hero-links">
+          <a class="btn btn-outline" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/kaiki-ferreira" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </div>
-
-    <nav class="links">
-      <a href="https://github.com/dev-kaiki" target="_blank" rel="noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/kaiki-ferreira" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="mailto:kaikiiquadros091o@gmail.com">Email</a>
-      <a href="https://wa.me/5516991666951" target="_blank" rel="noreferrer">WhatsApp</a>
-    </nav>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h2>Projetos e demos fullstack profissionais</h2>
-      <p>
-        Aqui estão meus demos focados em <b>arquitetura</b>, <b>qualidade</b> e <b>entrega</b>:
-        autenticação, permissões, realtime, upload seguro, filas, dashboards e deploy.
-      </p>
+  <main class="wrap">
+    <section class="section">
+      <div class="section-head">
+        <h2>Projetos</h2>
+        <p class="muted">Edite <code>projects.json</code> para mudar cards e links.</p>
+      </div>
 
-      <div class="controls">
-        <input id="search" class="input" placeholder="Buscar por nome, stack, tags..." />
-        <div id="tagRow" class="tagRow"></div>
+      <div id="error" class="error hidden"></div>
+      <div id="grid" class="grid">
+        <div class="skeleton">Carregando projetos...</div>
       </div>
     </section>
 
-    <section>
-      <div class="sectionTitle">
-        <h3>Projetos em destaque</h3>
-        <p class="muted">Edite os cards em <code>projects.json</code>. Se não tiver “Live Demo” ainda, deixe <code>demoUrl</code> vazio.</p>
-      </div>
-
-      <div id="grid" class="grid"></div>
-    </section>
-
-    <section class="cta">
-      <div>
-        <h3>Disponível para freelas e projetos</h3>
-        <p class="muted">Correção de bugs, features, APIs, bancos, deploy, manutenção e evolução contínua.</p>
-      </div>
-      <div class="ctaButtons">
-        <a class="btn primary" href="mailto:kaikiiquadros091o@gmail.com">Me chamar por Email</a>
-        <a class="btn" href="https://wa.me/5516991666951" target="_blank" rel="noreferrer">WhatsApp</a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>© <span id="year"></span> Kaiki • https://dev-kaiki.github.io</p>
+    <footer class="footer muted">
+      <span>Â© dev-kaiki</span>
     </footer>
   </main>
 
-  <script src="main.js"></script>
+  <!-- Fallback embutido: se fetch falhar, ainda renderiza -->
+  <script id="projects-fallback" type="application/json">
+[
+  {
+    "slug": "authkit",
+    "title": "AuthKit",
+    "tagline": "Auth starter: JWT/Refresh, RBAC, Swagger, Prisma",
+    "repo": "https://github.com/dev-kaiki/authkit",
+    "live_url": "https://dev-kaiki-authkit.vercel.app",
+    "docs_url": "https://dev-kaiki-authkit-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  },
+  {
+    "slug": "filevault",
+    "title": "FileVault",
+    "tagline": "Upload seguro: presigned URLs + storage abstraction",
+    "repo": "https://github.com/dev-kaiki/filevault",
+    "live_url": "https://dev-kaiki-filevault.vercel.app",
+    "docs_url": "https://dev-kaiki-filevault-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  },
+  {
+    "slug": "queueops",
+    "title": "QueueOps",
+    "tagline": "Jobs, retries/backoff, observabilidade e painel",
+    "repo": "https://github.com/dev-kaiki/queueops",
+    "live_url": "https://dev-kaiki-queueops.vercel.app",
+    "docs_url": "https://dev-kaiki-queueops-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  },
+  {
+    "slug": "reportforge",
+    "title": "ReportForge",
+    "tagline": "Relatorios + historico + export (PDF/JSON)",
+    "repo": "https://github.com/dev-kaiki/reportforge",
+    "live_url": "https://dev-kaiki-reportforge.vercel.app",
+    "docs_url": "https://dev-kaiki-reportforge-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  },
+  {
+    "slug": "shoppulse",
+    "title": "ShopPulse",
+    "tagline": "Dashboard admin com filtros, KPIs e export",
+    "repo": "https://github.com/dev-kaiki/shoppulse",
+    "live_url": "https://dev-kaiki-shoppulse.vercel.app",
+    "docs_url": "https://dev-kaiki-shoppulse-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  },
+  {
+    "slug": "sprintboard",
+    "title": "SprintBoard",
+    "tagline": "Kanban estilo Trello com foco em UX e produtividade",
+    "repo": "https://github.com/dev-kaiki/sprintboard",
+    "live_url": "https://dev-kaiki-sprintboard.vercel.app",
+    "docs_url": "https://dev-kaiki-sprintboard-api.onrender.com/docs",
+    "stack": ["Next.js","NestJS","Prisma","Postgres"]
+  }
+]
+  </script>
+
+  <script src="./main.js" defer></script>
 </body>
 </html>
