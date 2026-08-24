@@ -1,127 +1,269 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0ea5e9" />
-  <title>dev-kaiki • Portfólio</title>
-  <meta name="description" content="Portfólio de projetos (Fullstack • IA • Eng. Elétrica/Eletrônica). Demos com 1 clique." />
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaiki Quadros Ferreira — Industrial Systems, Embedded & AI</title>
+<meta name="description" content="Software engineer building systems for CNC machine tools: RS-232 protocols, ESP32 firmware, and RAG over technical archives. C++, Qt, FreeRTOS, Python, FastAPI.">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kaiki Quadros Ferreira — Industrial Systems, Embedded & AI">
+<meta property="og:description" content="Software engineer where software meets machines. CNC serial protocols, ESP32 firmware, and AI over technical archives.">
+<meta property="og:url" content="https://dev-kaiki.github.io/">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="container row">
-      <a class="brand" href="./">
-        <span class="dot"></span>
-        <span>dev-kaiki</span>
-      </a>
 
-      <nav class="nav">
-        <a href="#projects">Projetos</a>
-        <a href="#about">Sobre</a>
-        <a href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
-      </nav>
+<a class="skip" href="#main">Skip to content</a>
 
-      <button id="themeBtn" class="icon-btn" aria-label="Alternar tema" title="Alternar tema">
-        <span id="themeIcon" aria-hidden="true">🌙</span>
-      </button>
+<header class="topbar">
+  <div class="wrap row">
+    <a class="brand" href="./"><span class="brand-mark"></span>Kaiki&nbsp;Quadros&nbsp;Ferreira</a>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+      <a class="ext" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+    <button id="theme" class="icon-btn" aria-label="Toggle colour theme" title="Toggle colour theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Industrial systems · Embedded · AI</p>
+      <h1>I build software that talks<br>to machines.</h1>
+      <p class="lede">
+        CNC machine tools, the serial protocols that feed them, the firmware that sits on the port,
+        and the AI that helps fix them when they stop. C++, Python, and the parts of a stack that
+        break when real hardware is on the other end.
+      </p>
+      <p class="meta">
+        <span class="pill pill-on">Open to remote roles worldwide</span>
+        <span class="pill">Based in Brazil</span>
+      </p>
+      <p class="cta">
+        <a class="btn btn-primary" href="#work">See the work</a>
+        <a class="btn" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
+      </p>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-card">
-          <div>
-            <p class="kicker">Fullstack • IA • Eng. Elétrica/Eletrônica</p>
-            <h1>Projetos prontos para abrir <span class="accent">com 1 clique</span>.</h1>
-            <p class="subtitle">
-              Demos com links Live + Swagger, pensados para avaliação rápida (recrutador/cliente).
-            </p>
-            <div class="hero-actions">
-              <a class="btn" href="#projects">Ver projetos</a>
-              <a class="btn btn-outline" href="https://www.linkedin.com/in/kaiki-ferreira" target="_blank" rel="noopener">LinkedIn</a>
-              <a class="btn btn-outline" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </div>
+  <section class="band">
+    <div class="wrap">
+      <h2 class="band-title">One machine, three problems</h2>
+      <p class="band-lede">
+        A CNC machine needs programs sent to it, needs a way to send them without a laptop on a cart,
+        and needs fixing when it throws an alarm at 2&nbsp;AM. I built all three sides in production at SMI.
+      </p>
 
-          <div class="hero-stats">
-            <div class="stat">
-              <div class="stat-num" id="statCount">—</div>
-              <div class="stat-label">projetos</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">Next.js</div>
-              <div class="stat-label">web</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">NestJS</div>
-              <div class="stat-label">api</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">Prisma</div>
-              <div class="stat-label">db</div>
-            </div>
-          </div>
+      <figure class="diagram">
+        <svg viewBox="0 0 880 260" role="img" aria-labelledby="diagram-title diagram-desc">
+          <title id="diagram-title">How the three projects fit together</title>
+          <desc id="diagram-desc">A desktop DNC engine and an ESP32 firmware both send G-code over RS-232 to a CNC machine; a RAG assistant answers maintenance questions about the same machine from a phone.</desc>
+
+          <!-- desktop -->
+          <rect class="node" x="12" y="24" width="196" height="66" rx="10"/>
+          <text class="node-t" x="110" y="52">dnc-serial-engine</text>
+          <text class="node-s" x="110" y="72">C++17 · Qt · desktop</text>
+
+          <!-- esp32 -->
+          <rect class="node" x="12" y="146" width="196" height="66" rx="10"/>
+          <text class="node-t" x="110" y="174">esp32-dnc-firmware</text>
+          <text class="node-s" x="110" y="194">FreeRTOS · embedded</text>
+
+          <!-- arrows into serial -->
+          <path class="edge" d="M208 57 H286 Q300 57 300 71 V110"/>
+          <path class="edge" d="M208 179 H286 Q300 179 300 165 V150"/>
+          <text class="edge-t" x="252" y="46">G-code</text>
+          <text class="edge-t" x="252" y="204">G-code</text>
+
+          <!-- rs232 -->
+          <rect class="node node-alt" x="292" y="110" width="166" height="40" rx="8"/>
+          <text class="node-t sm" x="375" y="135">RS-232 · flow control</text>
+
+          <path class="edge" d="M458 130 H548"/>
+          <polygon class="head" points="548,124 562,130 548,136"/>
+
+          <!-- cnc -->
+          <rect class="node node-machine" x="566" y="86" width="150" height="88" rx="10"/>
+          <text class="node-t" x="641" y="122">CNC machine</text>
+          <text class="node-s" x="641" y="142">Fanuc · Siemens</text>
+          <text class="node-s" x="641" y="158">· legacy controls</text>
+
+          <!-- alarm up to maia -->
+          <path class="edge dash" d="M641 86 V44 H768"/>
+          <polygon class="head" points="768,38 782,44 768,50"/>
+          <text class="edge-t" x="700" y="34">alarm code</text>
+
+          <rect class="node node-ai" x="700" y="196" width="168" height="52" rx="10"/>
+          <text class="node-t sm" x="784" y="218">maia-cnc-assistant</text>
+          <text class="node-s" x="784" y="236">RAG · FastAPI · Flutter</text>
+
+          <path class="edge dash" d="M784 196 V60"/>
+          <text class="edge-t rot" x="798" y="130">answer</text>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section id="work" class="wrap section">
+    <h2 class="sec-title">Selected work</h2>
+    <p class="sec-note">All three run in production at SMI and are published with the company's permission.</p>
+
+    <article class="proj">
+      <header class="proj-h">
+        <h3><a href="https://github.com/dev-kaiki/dnc-serial-engine" target="_blank" rel="noopener">dnc-serial-engine</a></h3>
+        <p class="tags"><span>C++17</span><span>Qt</span><span>CMake</span><span>RS-232</span></p>
+      </header>
+      <p class="proj-lede">
+        An RS-232 DNC engine that streams G-code to CNC controllers — fast enough to be useful,
+        slow enough never to drop a block mid-cut.
+      </p>
+      <p>
+        A controller from the 1980s has a few kilobytes of buffer and no way to report how full it is.
+        You get one bit of backpressure, and it arrives late. Send too fast and the machine silently
+        drops characters while cutting steel; send too slow and drip-feeding a program larger than the
+        machine's memory stops being viable. The engine treats flow control as a <strong>control loop</strong>:
+        chunk size grows while the machine drains and downshifts the moment <code>XOFF</code> arrives early.
+      </p>
+      <p class="proj-hi">
+        The <a href="https://github.com/dev-kaiki/dnc-serial-engine/tree/main/docs/engineering-log" target="_blank" rel="noopener">engineering log</a>
+        documents the real debugging history on live machines — including the overflow fix that created a
+        throughput ceiling, and the ceiling fix that brought back mid-program choking.
+      </p>
+      <p class="proj-links">
+        <a class="btn btn-sm" href="https://github.com/dev-kaiki/dnc-serial-engine" target="_blank" rel="noopener">Repository ↗</a>
+        <img class="badge" alt="build status" src="https://github.com/dev-kaiki/dnc-serial-engine/actions/workflows/build.yml/badge.svg">
+      </p>
+    </article>
+
+    <article class="proj">
+      <header class="proj-h">
+        <h3><a href="https://github.com/dev-kaiki/esp32-dnc-firmware" target="_blank" rel="noopener">esp32-dnc-firmware</a></h3>
+        <p class="tags"><span>C++</span><span>FreeRTOS</span><span>ESP32</span><span>MAX3232</span></p>
+      </header>
+      <p class="proj-lede">
+        The same job on bare metal — an ESP32 permanently wired to the machine's serial port,
+        replacing the laptop on a cart.
+      </p>
+      <p>
+        Programs live on a microSD card inside the panel; the operator opens a web page from any phone
+        on the shop floor and picks a file. Six FreeRTOS tasks, and lock-free ring buffers that decouple
+        serial I/O from storage and HTTP — so a slow SD write or a page load can never stall the byte
+        stream feeding the machine, which is the one thing that must not happen mid-program.
+      </p>
+      <p class="proj-links">
+        <a class="btn btn-sm" href="https://github.com/dev-kaiki/esp32-dnc-firmware" target="_blank" rel="noopener">Repository ↗</a>
+      </p>
+    </article>
+
+    <article class="proj">
+      <header class="proj-h">
+        <h3><a href="https://github.com/dev-kaiki/maia-cnc-assistant" target="_blank" rel="noopener">maia-cnc-assistant</a></h3>
+        <p class="tags"><span>Python</span><span>FastAPI</span><span>RAG</span><span>pgvector</span><span>Flutter</span></p>
+      </header>
+      <p class="proj-lede">
+        A RAG assistant over a company's technical archive, reaching technicians through a Flutter app
+        and WhatsApp.
+      </p>
+      <p>
+        When a controller throws an alarm at 2&nbsp;AM the answer usually exists — in a 400-page PDF nobody
+        can search, or in the head of the one technician who is asleep. Industrial maintenance breaks
+        generic RAG in specific ways, and most of the codebase is the response: a multi-stage answer
+        pipeline with an explicit <strong>safety policy</strong> (a hallucinated procedure on a live machine
+        injures someone), Drive ingestion gated behind a <strong>human review queue</strong>, and
+        <strong>cost guards</strong> at request, daily and monthly level so a retry loop cannot burn the budget
+        overnight.
+      </p>
+      <p class="proj-hi">
+        Provider migration is done with shadow wrappers that run the new path alongside the live one and
+        log the differences — verified against real traffic before being switched on.
+      </p>
+      <p class="proj-links">
+        <a class="btn btn-sm" href="https://github.com/dev-kaiki/maia-cnc-assistant" target="_blank" rel="noopener">Repository ↗</a>
+      </p>
+    </article>
+  </section>
+
+  <section id="stack" class="band">
+    <div class="wrap">
+      <h2 class="sec-title">Stack</h2>
+      <div class="grid">
+        <div class="cell">
+          <h3>Systems &amp; embedded</h3>
+          <p>C++17 · Qt · FreeRTOS · ESP32 · RS-232 and serial protocols · CMake · Arduino</p>
         </div>
-
-        <div class="controls" id="projects">
-          <div class="control">
-            <label for="q">Buscar</label>
-            <input id="q" type="search" placeholder="ex: kanban, jwt, upload, jobs..." autocomplete="off" />
-          </div>
-
-          <div class="control">
-            <label for="stack">Stack</label>
-            <select id="stack">
-              <option value="">Todas</option>
-            </select>
-          </div>
-
-          <div class="control">
-            <label for="sort">Ordenar</label>
-            <select id="sort">
-              <option value="title">Nome (A-Z)</option>
-              <option value="recent">Mais relevante</option>
-            </select>
-          </div>
+        <div class="cell">
+          <h3>Backend &amp; AI</h3>
+          <p>Python · FastAPI · PostgreSQL · pgvector · RAG · OpenAI &amp; Gemini · Docker</p>
         </div>
-
-        <div class="grid" id="grid"></div>
-
-        <div class="notice" id="notice" hidden>
-          <strong>Ops:</strong> não consegui carregar <code>projects.json</code>. Mostrando lista embutida.
+        <div class="cell">
+          <h3>Apps</h3>
+          <p>Flutter (Android, iOS, web, desktop) · TypeScript</p>
+        </div>
+        <div class="cell">
+          <h3>Ops</h3>
+          <p>Caddy · GitHub Actions · versioned SQL migrations · backup and restore</p>
         </div>
       </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="container">
-        <h2>Sobre</h2>
-        <p class="muted">
-          Eu construo soluções fullstack (web + API) com foco em experiência (UX), qualidade de código e deploy simples.
-          Também atuo com automação/eletrônica e integração hardware + software.
-        </p>
-
-        <div class="about-actions">
-          <a class="btn btn-outline" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">Ver GitHub</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/kaiki-ferreira" target="_blank" rel="noopener">Ver LinkedIn</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container row">
-      <span class="muted">© <span id="year"></span> dev-kaiki</span>
-      <span class="muted">Feito com HTML/CSS/JS puro (GitHub Pages).</span>
+      <p class="note">
+        I ship things that run unattended where failure is expensive, and I document what I got wrong on
+        the way there. The interesting part of a system is usually the constraint nobody wrote down — the
+        controller that lies about its buffer state, the archive nobody can search, the budget a retry
+        loop can burn through overnight.
+      </p>
     </div>
-  </footer>
+  </section>
 
-  <script src="./main.js"></script>
+  <section id="contact" class="wrap section contact">
+    <h2 class="sec-title">Get in touch</h2>
+    <p class="lede">Open to remote engineering roles worldwide — backend, embedded and industrial systems, or applied AI.</p>
+    <p class="cta">
+      <a class="btn btn-primary" href="mailto:kaikiiquadros091o@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/kaiki-ferreira/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Kaiki Quadros Ferreira · Built with plain HTML and CSS</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  if (saved) root.setAttribute('data-theme', saved);
+
+  var btn = document.getElementById('theme');
+  btn.addEventListener('click', function () {
+    var current = root.getAttribute('data-theme');
+    if (!current) {
+      current = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+
 </body>
 </html>
