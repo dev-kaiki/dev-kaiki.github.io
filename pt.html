@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaiki Quadros Ferreira — Sistemas Industriais, Embarcados e IA</title>
+<meta name="description" content="Engenheiro de software que constrói sistemas para máquinas CNC: protocolos RS-232, clientes Android e desktop, e RAG sobre acervos técnicos. C++, Qt, QML, Python, FastAPI.">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kaiki Quadros Ferreira — Sistemas Industriais, Embarcados e IA">
+<meta property="og:description" content="Engenheiro de software onde o software encontra a máquina. Protocolos seriais de CNC, clientes Android e desktop, e IA sobre acervos técnicos.">
+<meta property="og:url" content="https://dev-kaiki.github.io/pt.html">
+<meta name="twitter:card" content="summary">
+
+<link rel="alternate" hreflang="en" href="https://dev-kaiki.github.io/">
+<link rel="alternate" hreflang="pt-BR" href="https://dev-kaiki.github.io/pt.html">
+<link rel="alternate" hreflang="x-default" href="https://dev-kaiki.github.io/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <div class="wrap row">
+    <a class="brand" href="./pt.html"><span class="brand-mark"></span>Kaiki&nbsp;Quadros&nbsp;Ferreira</a>
+    <nav class="nav">
+      <a href="#work">Projetos</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contato</a>
+      <a class="ext" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+    <p class="lang" aria-label="Idioma">
+      <a href="./" hreflang="en" lang="en">EN</a><span class="lang-on" aria-current="true">PT</span>
+    </p>
+    <button id="theme" class="icon-btn" aria-label="Alternar tema" title="Alternar tema">◐</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Sistemas industriais · Embarcados · IA</p>
+      <h1>Eu faço software que<br>conversa com máquina.</h1>
+      <p class="lede">
+        Máquinas CNC, os protocolos seriais que as alimentam, os tablets e desktops que rodam esses
+        protocolos, e a IA que ajuda a consertar quando a máquina para. C++, Python, e as partes de
+        uma stack que quebram quando tem hardware de verdade do outro lado.
+      </p>
+      <p class="meta">
+        <span class="pill pill-on">Aberto a vagas remotas no exterior</span>
+        <span class="pill">Brasil</span>
+      </p>
+      <p class="cta">
+        <a class="btn btn-primary" href="#work">Ver os projetos</a>
+        <a class="btn" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2 class="band-title">Uma máquina, três problemas</h2>
+      <p class="band-lede">
+        Uma CNC precisa receber programas, precisa de um jeito de enviá-los que não seja um notebook
+        num carrinho, e precisa de conserto quando dispara um alarme às 2&nbsp;da manhã. Construí os
+        três lados em produção na SMI.
+      </p>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 880 260" role="img" aria-labelledby="diagram-title diagram-desc">
+          <title id="diagram-title">Como os três projetos se encaixam</title>
+          <desc id="diagram-desc">Um motor DNC de desktop e um app de tablet Android enviam G-code por RS-232 para uma máquina CNC; um assistente RAG responde dúvidas de manutenção sobre a mesma máquina pelo celular.</desc>
+
+          <rect class="node" x="12" y="24" width="196" height="66" rx="10"/>
+          <text class="node-t" x="110" y="52">dnc-serial-engine</text>
+          <text class="node-s" x="110" y="72">C++17 · Qt · desktop</text>
+
+          <rect class="node" x="12" y="146" width="196" height="66" rx="10"/>
+          <text class="node-t" x="110" y="174">dnc-android</text>
+          <text class="node-s" x="110" y="194">Qt6 · QML · USB OTG</text>
+
+          <path class="edge" d="M208 57 H286 Q300 57 300 71 V110"/>
+          <path class="edge" d="M208 179 H286 Q300 179 300 165 V150"/>
+          <text class="edge-t" x="252" y="46">G-code</text>
+          <text class="edge-t" x="252" y="204">G-code</text>
+
+          <rect class="node node-alt" x="292" y="110" width="166" height="40" rx="8"/>
+          <text class="node-t sm" x="375" y="135">RS-232 · flow control</text>
+
+          <path class="edge" d="M458 130 H548"/>
+          <polygon class="head" points="548,124 562,130 548,136"/>
+
+          <rect class="node node-machine" x="566" y="86" width="150" height="88" rx="10"/>
+          <text class="node-t" x="641" y="122">Máquina CNC</text>
+          <text class="node-s" x="641" y="142">Fanuc · Siemens</text>
+          <text class="node-s" x="641" y="158">· comandos antigos</text>
+
+          <path class="edge dash" d="M641 86 V44 H768"/>
+          <polygon class="head" points="768,38 782,44 768,50"/>
+          <text class="edge-t" x="700" y="34">alarme</text>
+
+          <rect class="node node-ai" x="700" y="196" width="168" height="52" rx="10"/>
+          <text class="node-t sm" x="784" y="218">maia-cnc-assistant</text>
+          <text class="node-s" x="784" y="236">RAG · FastAPI · Flutter</text>
+
+          <path class="edge dash" d="M784 196 V60"/>
+          <text class="edge-t rot" x="798" y="130">resposta</text>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section id="work" class="wrap section">
+    <h2 class="sec-title">Projetos selecionados</h2>
+    <p class="sec-note">Os três rodam em produção na SMI e foram publicados com autorização da empresa.</p>
+
+    <article class="proj">
+      <header class="proj-h">
+        <h3><a href="https://github.com/dev-kaiki/dnc-serial-engine" target="_blank" rel="noopener">dnc-serial-engine</a></h3>
+        <p class="tags"><span>C++17</span><span>Qt</span><span>CMake</span><span>RS-232</span></p>
+      </header>
+      <p class="proj-lede">
+        Um motor DNC RS-232 que transmite G-code para comandos CNC — rápido o bastante para servir,
+        lento o bastante para nunca perder um bloco no meio do corte.
+      </p>
+      <p>
+        Um comando dos anos 80 tem alguns kilobytes de buffer e nenhuma forma de informar o quanto
+        está cheio. Você recebe um único bit de contrapressão, e ele chega atrasado. Enviar rápido
+        demais faz a máquina perder caracteres em silêncio enquanto corta aço; devagar demais e o
+        drip-feed — transmitir um programa maior que a memória da máquina, em tempo real, enquanto
+        ela usina — deixa de ser viável. O motor trata controle de fluxo como
+        <strong>malha de controle</strong>: o chunk cresce enquanto a máquina drena e cai na hora em
+        que o <code>XOFF</code> chega cedo demais.
+      </p>
+      <p class="proj-hi">
+        O <a href="https://github.com/dev-kaiki/dnc-serial-engine/tree/main/docs/engineering-log" target="_blank" rel="noopener">diário de engenharia</a>
+        registra a depuração real em máquina rodando — inclusive a correção de overflow que criou um
+        teto de throughput, e a correção do teto que trouxe de volta o engasgo no meio do programa.
+      </p>
+      <p class="proj-links">
+        <a class="btn btn-sm" href="https://github.com/dev-kaiki/dnc-serial-engine" target="_blank" rel="noopener">Repositório ↗</a>
+        <img class="badge" alt="status do build" src="https://github.com/dev-kaiki/dnc-serial-engine/actions/workflows/build.yml/badge.svg">
+      </p>
+    </article>
+
+    <article class="proj">
+      <header class="proj-h">
+        <h3><a href="https://github.com/dev-kaiki/dnc-android" target="_blank" rel="noopener">dnc-android</a></h3>
+        <p class="tags"><span>Qt 6</span><span>QML</span><span>C++17</span><span>JNI</span><span>USB serial</span></p>
+      </header>
+      <p class="proj-lede">
+        O mesmo motor num tablet fixado na máquina — chegando ao RS-232 por USB OTG, chip FTDI e uma
+        ponte JNI, porque Android não tem porta serial.
+      </p>
+      <p>
+        O motor de transmissão foi portado <em>sem alteração de lógica</em>, atrás de uma interface
+        <code>ISerialPort</code> extraída: jogá-lo fora teria descartado cada sessão de bancada que o
+        afinou. Fazer o envio funcionar exigiu encontrar cinco falhas que
+        <strong>não geravam erro nenhum</strong> — um timeout de leitura zerado prendendo a thread de
+        leitura USB, o que fazia as escritas serem engolidas em silêncio; um poller de sinais rodando
+        mil transferências de controle por segundo contra o escritor, sem lock; e um pedido de
+        controle de fluxo que a biblioteca FTDI recusava por divergência de nome, seguindo adiante
+        como se tivesse dado certo.
+      </p>
+      <p class="proj-hi">
+        A última foi confirmada lendo o bytecode da biblioteca:
+        <code>controlTransfer(0x40, 2, 0x1311, port|0x0400)</code> é <code>SIO_SET_FLOW_CTRL</code>
+        com <code>SIO_XON_XOFF_HS</code> — byte a byte o que o driver do Windows escreve.
+      </p>
+      <p class="proj-links">
+        <a class="btn btn-sm" href="https://github.com/dev-kaiki/dnc-android" target="_blank" rel="noopener">Repositório ↗</a>
+      </p>
+    </article>
+
+    <article class="proj">
+      <header class="proj-h">
+        <h3><a href="https://github.com/dev-kaiki/maia-cnc-assistant" target="_blank" rel="noopener">maia-cnc-assistant</a></h3>
+        <p class="tags"><span>Python</span><span>FastAPI</span><span>RAG</span><span>pgvector</span><span>Flutter</span></p>
+      </header>
+      <p class="proj-lede">
+        Um assistente RAG sobre o acervo técnico da empresa, chegando ao técnico por app Flutter e
+        WhatsApp.
+      </p>
+      <p>
+        Quando um comando dispara um alarme às 2 da manhã, a resposta quase sempre existe — num PDF
+        de 400 páginas que ninguém consegue pesquisar, ou na cabeça do único técnico que sabe, e que
+        está dormindo. Manutenção industrial quebra o RAG genérico de formas específicas, e a maior
+        parte do código é a resposta a isso: um pipeline de resposta em etapas com
+        <strong>política de segurança</strong> explícita (um procedimento alucinado numa máquina
+        ligada machuca alguém), ingestão do Drive atrás de uma <strong>fila de revisão humana</strong>,
+        e <strong>tetos de custo</strong> por requisição, por dia e por mês, para um loop de retry não
+        queimar o orçamento de madrugada.
+      </p>
+      <p class="proj-hi">
+        Troca de provedor de IA é feita com shadow wrappers que rodam o caminho novo em paralelo ao
+        que está no ar e registram as diferenças — verificado contra tráfego real antes de ser ligado.
+      </p>
+      <p class="proj-links">
+        <a class="btn btn-sm" href="https://github.com/dev-kaiki/maia-cnc-assistant" target="_blank" rel="noopener">Repositório ↗</a>
+      </p>
+    </article>
+  </section>
+
+  <section id="stack" class="band">
+    <div class="wrap">
+      <h2 class="sec-title">Stack</h2>
+      <div class="grid">
+        <div class="cell">
+          <h3>Sistemas e embarcados</h3>
+          <p>C++17 · Qt · QML · Android (JNI, USB host) · RS-232 e protocolos seriais · FreeRTOS · CMake</p>
+        </div>
+        <div class="cell">
+          <h3>Backend e IA</h3>
+          <p>Python · FastAPI · PostgreSQL · pgvector · RAG · OpenAI e Gemini · Docker</p>
+        </div>
+        <div class="cell">
+          <h3>Apps</h3>
+          <p>Flutter (Android, iOS, web, desktop) · Qt Quick · TypeScript</p>
+        </div>
+        <div class="cell">
+          <h3>Ops</h3>
+          <p>Caddy · GitHub Actions · migrations SQL versionadas · backup e restore</p>
+        </div>
+      </div>
+      <p class="note">
+        Entrego coisas que rodam sozinhas onde falhar sai caro, e documento o que errei no caminho.
+        A parte interessante de um sistema costuma ser a restrição que ninguém escreveu — o comando
+        que mente sobre o estado do próprio buffer, o acervo que ninguém consegue pesquisar, o
+        orçamento que um loop de retry queima durante a noite.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="wrap section contact">
+    <h2 class="sec-title">Contato</h2>
+    <p class="lede">Aberto a vagas remotas de engenharia no exterior — backend, sistemas embarcados e industriais, ou IA aplicada.</p>
+    <p class="cta">
+      <a class="btn btn-primary" href="mailto:kaikiiquadros091o@gmail.com">Enviar e-mail</a>
+      <a class="btn" href="https://www.linkedin.com/in/kaiki-ferreira/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Kaiki Quadros Ferreira · Feito com HTML e CSS puros</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  if (saved) root.setAttribute('data-theme', saved);
+
+  var btn = document.getElementById('theme');
+  btn.addEventListener('click', function () {
+    var current = root.getAttribute('data-theme');
+    if (!current) {
+      current = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    var next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
