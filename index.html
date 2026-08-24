@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kaiki Quadros Ferreira — Industrial Systems, Embedded & AI</title>
-<meta name="description" content="Software engineer building systems for CNC machine tools: RS-232 protocols, ESP32 firmware, and RAG over technical archives. C++, Qt, FreeRTOS, Python, FastAPI.">
+<meta name="description" content="Software engineer building systems for CNC machine tools: RS-232 protocols, Android and desktop clients, and RAG over technical archives. C++, Qt, QML, Python, FastAPI.">
 <meta name="theme-color" content="#0d1117">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kaiki Quadros Ferreira — Industrial Systems, Embedded & AI">
-<meta property="og:description" content="Software engineer where software meets machines. CNC serial protocols, ESP32 firmware, and AI over technical archives.">
+<meta property="og:description" content="Software engineer where software meets machines. CNC serial protocols, Android and desktop clients, and AI over technical archives.">
 <meta property="og:url" content="https://dev-kaiki.github.io/">
 <meta name="twitter:card" content="summary">
 
@@ -43,9 +43,9 @@
       <p class="kicker">Industrial systems · Embedded · AI</p>
       <h1>I build software that talks<br>to machines.</h1>
       <p class="lede">
-        CNC machine tools, the serial protocols that feed them, the firmware that sits on the port,
-        and the AI that helps fix them when they stop. C++, Python, and the parts of a stack that
-        break when real hardware is on the other end.
+        CNC machine tools, the serial protocols that feed them, the tablets and desktops that drive
+        those protocols, and the AI that helps fix the machine when it stops. C++, Python, and the
+        parts of a stack that break when real hardware is on the other end.
       </p>
       <p class="meta">
         <span class="pill pill-on">Open to remote roles worldwide</span>
@@ -62,24 +62,24 @@
     <div class="wrap">
       <h2 class="band-title">One machine, three problems</h2>
       <p class="band-lede">
-        A CNC machine needs programs sent to it, needs a way to send them without a laptop on a cart,
+        A CNC machine needs programs sent to it, needs a way to send them that isn’t a laptop on a cart,
         and needs fixing when it throws an alarm at 2&nbsp;AM. I built all three sides in production at SMI.
       </p>
 
       <figure class="diagram">
         <svg viewBox="0 0 880 260" role="img" aria-labelledby="diagram-title diagram-desc">
           <title id="diagram-title">How the three projects fit together</title>
-          <desc id="diagram-desc">A desktop DNC engine and an ESP32 firmware both send G-code over RS-232 to a CNC machine; a RAG assistant answers maintenance questions about the same machine from a phone.</desc>
+          <desc id="diagram-desc">A desktop DNC engine and an Android tablet app both send G-code over RS-232 to a CNC machine; a RAG assistant answers maintenance questions about the same machine from a phone.</desc>
 
           <!-- desktop -->
           <rect class="node" x="12" y="24" width="196" height="66" rx="10"/>
           <text class="node-t" x="110" y="52">dnc-serial-engine</text>
           <text class="node-s" x="110" y="72">C++17 · Qt · desktop</text>
 
-          <!-- esp32 -->
+          <!-- android -->
           <rect class="node" x="12" y="146" width="196" height="66" rx="10"/>
-          <text class="node-t" x="110" y="174">esp32-dnc-firmware</text>
-          <text class="node-s" x="110" y="194">FreeRTOS · embedded</text>
+          <text class="node-t" x="110" y="174">dnc-android</text>
+          <text class="node-s" x="110" y="194">Qt6 · QML · USB OTG</text>
 
           <!-- arrows into serial -->
           <path class="edge" d="M208 57 H286 Q300 57 300 71 V110"/>
@@ -149,21 +149,28 @@
 
     <article class="proj">
       <header class="proj-h">
-        <h3><a href="https://github.com/dev-kaiki/esp32-dnc-firmware" target="_blank" rel="noopener">esp32-dnc-firmware</a></h3>
-        <p class="tags"><span>C++</span><span>FreeRTOS</span><span>ESP32</span><span>MAX3232</span></p>
+        <h3><a href="https://github.com/dev-kaiki/dnc-android" target="_blank" rel="noopener">dnc-android</a></h3>
+        <p class="tags"><span>Qt 6</span><span>QML</span><span>C++17</span><span>JNI</span><span>USB serial</span></p>
       </header>
       <p class="proj-lede">
-        The same job on bare metal — an ESP32 permanently wired to the machine's serial port,
-        replacing the laptop on a cart.
+        The same engine on a tablet bolted to the machine — reaching RS-232 through USB OTG, an FTDI
+        chip and a JNI bridge, because Android has no serial port.
       </p>
       <p>
-        Programs live on a microSD card inside the panel; the operator opens a web page from any phone
-        on the shop floor and picks a file. Six FreeRTOS tasks, and lock-free ring buffers that decouple
-        serial I/O from storage and HTTP — so a slow SD write or a page load can never stall the byte
-        stream feeding the machine, which is the one thing that must not happen mid-program.
+        The transmission engine was ported <em>unchanged</em> behind an extracted <code>ISerialPort</code>
+        interface: throwing it away would have discarded every bench session that tuned it. Getting it to
+        send took finding five faults that produced <strong>no visible error</strong> — a zero read-timeout
+        parking the USB reader thread so writes were silently swallowed, a signal poller running 1000
+        control transfers per second against the writer with no lock, and a flow-control request the FTDI
+        library rejected on a name mismatch while continuing as if it had worked.
+      </p>
+      <p class="proj-hi">
+        The last one was confirmed by reading the library's bytecode:
+        <code>controlTransfer(0x40, 2, 0x1311, port|0x0400)</code> is <code>SIO_SET_FLOW_CTRL</code> with
+        <code>SIO_XON_XOFF_HS</code> — byte for byte what the Windows driver writes.
       </p>
       <p class="proj-links">
-        <a class="btn btn-sm" href="https://github.com/dev-kaiki/esp32-dnc-firmware" target="_blank" rel="noopener">Repository ↗</a>
+        <a class="btn btn-sm" href="https://github.com/dev-kaiki/dnc-android" target="_blank" rel="noopener">Repository ↗</a>
       </p>
     </article>
 
@@ -201,7 +208,7 @@
       <div class="grid">
         <div class="cell">
           <h3>Systems &amp; embedded</h3>
-          <p>C++17 · Qt · FreeRTOS · ESP32 · RS-232 and serial protocols · CMake · Arduino</p>
+          <p>C++17 · Qt · QML · Android (JNI, USB host) · RS-232 and serial protocols · FreeRTOS · CMake</p>
         </div>
         <div class="cell">
           <h3>Backend &amp; AI</h3>
