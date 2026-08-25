@@ -26,6 +26,8 @@
   function FlowSim(root) {
     var self = this;
     this.root = root;
+    this.mode = 'manual';
+    this.manualRate = 240;     // matches the slider's initial value
     this.reset();
 
     root.innerHTML =
@@ -104,30 +106,40 @@
         self.mode = b.getAttribute('data-mode');
         self.el.rateBox.style.opacity = self.mode === 'adaptive' ? '.4' : '1';
         self.el.rate.disabled = self.mode === 'adaptive';
-        self.reset(true);
+        self.reset();
       });
     });
 
+    this.last = null;
     this.timer = setInterval(function () { self.tick(); }, TICK_MS);
   }
 
-  FlowSim.prototype.reset = function (keepMode) {
-    this.buffer     = 0;
-    this.sent       = 0;
-    this.lost       = 0;
-    this.elapsed    = 0;
-    this.xoff       = false;
-    this.chunk      = 8;       // adaptive: current chunk size
-    this.sinceXoff  = 0;
-    if (!keepMode) {
-      this.mode       = 'manual';
-      this.manualRate = 240;
-    }
+  // Clears the run without touching what the visitor chose: the selected mode
+  // and the slider position survive a reset.
+  FlowSim.prototype.reset = function () {
+    this.buffer    = 0;
+    this.sent      = 0;
+    this.lost      = 0;
+    this.elapsed   = 0;
+    this.xoff      = false;
+    this.chunk     = 160;      // adaptive: current send rate, B/s
+    this.sinceXoff = 0;
+    this.last      = null;
     if (this.el) this.render();
   };
 
   FlowSim.prototype.tick = function () {
-    var dt = TICK_MS / 1000;
+    // Browsers throttle timers in background tabs, so measure the real
+    // elapsed time instead of assuming TICK_MS. Skip entirely while hidden:
+    // a simulation nobody is watching should not be accumulating stats.
+    var now = (window.performance && performance.now) ? performance.now() : Date.now();
+    if (document.hidden) { this.last = now; return; }
+    if (this.last === null) { this.last = now; return; }
+
+    var dt = (now - this.last) / 1000;
+    this.last = now;
+    if (dt > 0.25) dt = 0.25;   // clamp after a stall, so nothing jumps
+
     this.elapsed += dt;
 
     // The controller drains its buffer as it executes blocks. Rate wobbles,
@@ -144,13 +156,13 @@
     if (this.mode === 'adaptive') {
       // Grow while the machine keeps up; collapse hard the moment XOFF arrives.
       if (this.xoff) {
-        this.chunk = Math.max(2, this.chunk * 0.55);
+        this.chunk = Math.max(40, this.chunk * 0.55);
         this.sinceXoff = 0;
       } else {
         this.sinceXoff += dt;
-        if (this.sinceXoff > 0.35) this.chunk = Math.min(30, this.chunk * 1.08);
+        if (this.sinceXoff > 0.35) this.chunk = Math.min(600, this.chunk * Math.pow(1.08, dt / 0.05));
       }
-      want = this.xoff ? 0 : this.chunk;
+      want = this.xoff ? 0 : this.chunk * dt;
     } else {
       // Manual mode ignores XOFF entirely — this is the naive implementation.
       want = this.manualRate * dt;
