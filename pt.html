@@ -65,7 +65,7 @@
           <a class="btn" href="#demos">Experimentar agora</a>
         </p>
       </div>
-      <div class="avatar-ph" aria-hidden="true">sua foto<br>entra aqui</div>
+      <img class="avatar" src="./assets/kaiki.jpg" alt="Kaiki Quadros Ferreira" width="440" height="440">
     </div>
   </section>
 
@@ -74,27 +74,67 @@
     <div class="wrap">
       <h2 class="band-title">O software, rodando</h2>
       <p class="band-lede">
-        Telas reais do DNC que uso todo dia na SMI — não é maquete.
+        Telas reais dos sistemas em uso na SMI — não são maquetes. Clique para ampliar.
       </p>
 
-      <div class="shots">
-        <figure class="shot">
-          <img src="./assets/dnc-operacao.png" alt="Tela de operação do SMI DNC: programa carregado, status da sessão, taxa efetiva e LEDs dos sinais RS-232" loading="lazy">
-          <figcaption>
-            <b>Operação</b>
-            Programa carregado e pronto para enviar. À direita, os oito sinais da linha RS-232
-            monitorados ao vivo — é por eles que o software sabe se a máquina está aguentando.
-          </figcaption>
-        </figure>
+      <div class="figures">
+        <div class="fig"><b>18.299</b><span>documentos processados pela IA</span></div>
+        <div class="fig"><b>1.038.300</b><span>trechos indexados para busca</span></div>
+        <div class="fig"><b>14</b><span>marcas de máquina atendidas</span></div>
+        <div class="fig"><b>9</b><span>sistemas construídos sozinho</span></div>
+      </div>
 
+      <div class="shot-group">
+        <h3>DNC<span class="st">C++ · Qt · RS-232</span></h3>
+        <p class="gl">O software que conversa com a máquina pela porta serial.</p>
+        <div class="shots-2">
+          <figure class="shot">
+            <img src="./assets/dnc-operacao.png" alt="Tela de operação do DNC: programa carregado, status da sessão e LEDs dos sinais RS-232" loading="lazy">
+            <figcaption><b>Operação</b>Os oito sinais da linha RS-232 monitorados ao vivo — é por eles que o software sabe se a máquina está aguentando.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="./assets/dnc-rs232.png" alt="Configuração RS-232: baud, paridade, controle de fluxo, EOF, buffers e timing" loading="lazy">
+            <figcaption><b>Configuração por máquina</b>Cada CNC quer uma combinação diferente. Buffers, controle de fluxo e leitura de sinais a cada 1&nbsp;ms.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="shot-group">
+        <h3>MAIA<span class="st">FastAPI · RAG · Flutter</span></h3>
+        <p class="gl">A assistente que responde dúvidas técnicas a partir do acervo da empresa.</p>
         <figure class="shot">
-          <img src="./assets/dnc-rs232.png" alt="Tela de configuração RS-232 do SMI DNC: baud rate, paridade, controle de fluxo, EOF, buffers e timing" loading="lazy">
-          <figcaption>
-            <b>Configuração da máquina</b>
-            Cada CNC quer uma combinação diferente. Baud, paridade, controle de fluxo,
-            caractere de fim de arquivo, tamanho de buffer e leitura de sinais a cada 1&nbsp;ms.
-          </figcaption>
+          <img src="./assets/maia-apresentacao.jpg" alt="Apresentação da MAIA com exemplo de pergunta sobre alarme SV0433 em comando Fanuc e a resposta técnica" loading="lazy">
+          <figcaption><b>A pergunta que o técnico faz de verdade</b>“No Fanuc, alarme SV0433 no eixo X” — e a resposta chega em passos verificáveis, não em texto genérico.</figcaption>
         </figure>
+        <div class="shots-2">
+          <figure class="shot">
+            <img src="./assets/maia-base-tecnica.png" alt="Painel da base técnica: 18.299 documentos processados, 18.272 fontes ativas e 1.038.300 trechos indexados" loading="lazy">
+            <figcaption><b>Base técnica</b>Cada documento passa por revisão humana antes de entrar no índice. Nada é indexado só por estar numa pasta.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="./assets/maia-chat.png" alt="Tela inicial do chat técnico da MAIA com sugestões de perguntas sobre encoder, servo drive e alarmes" loading="lazy">
+            <figcaption><b>Chat técnico</b>As sugestões pedem fabricante e modelo de propósito — pergunta vaga puxa fonte errada.</figcaption>
+          </figure>
+        </div>
+        <figure class="shot" style="margin-top:18px">
+          <img src="./assets/maia-mobile.jpg" alt="Três telas do aplicativo móvel: resposta com fontes, painel operacional e projetos por máquina" loading="lazy">
+          <figcaption><b>No bolso do técnico</b>O mesmo sistema no celular, onde o problema acontece — com resposta, painel e conversas organizadas por máquina.</figcaption>
+        </figure>
+      </div>
+
+      <div class="shot-group">
+        <h3>SMI Files<span class="st">Flutter · Supabase · offline-first</span></h3>
+        <p class="gl">Ordens de serviço e o registro fotográfico do que foi consertado.</p>
+        <div class="shots-2">
+          <figure class="shot">
+            <img src="./assets/smifiles-home.png" alt="Tela inicial do SMI Files com ações para criar ordem de serviço, explorar OS e abrir checklists" loading="lazy">
+            <figcaption><b>Início</b>Criar OS, explorar as existentes e manter os checklists — em duas telas de distância.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="./assets/smifiles-midias.jpg" alt="Galeria de 28 fotos de um inversor de frequência em manutenção, organizadas dentro de uma ordem de serviço" loading="lazy">
+            <figcaption><b>Registro da OS</b>28 fotos de um inversor aberto na bancada. É esse registro que sustenta o laudo e o orçamento depois.</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
