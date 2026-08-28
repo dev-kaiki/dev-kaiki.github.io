@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kaiki Quadros Ferreira — Industrial Systems, Embedded & AI</title>
+<title>Kaiki Quadros Ferreira — Industrial Systems, Embedded &amp; AI</title>
 <meta name="description" content="Software engineer building systems for CNC machine tools: RS-232 protocols, Android and desktop clients, and RAG over technical archives. C++, Qt, QML, Python, FastAPI.">
 <meta name="theme-color" content="#0d1117">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kaiki Quadros Ferreira — Industrial Systems, Embedded & AI">
+<meta property="og:title" content="Kaiki Quadros Ferreira — Industrial Systems, Embedded &amp; AI">
 <meta property="og:description" content="Software engineer where software meets machines. CNC serial protocols, Android and desktop clients, and AI over technical archives.">
 <meta property="og:url" content="https://dev-kaiki.github.io/">
 <meta name="twitter:card" content="summary">
@@ -33,7 +33,6 @@
     <nav class="nav">
       <a href="#work">Work</a>
       <a href="#demos">Try it</a>
-      <a href="#stack">Stack</a>
       <a href="#contact">Contact</a>
       <a class="ext" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub ↗</a>
     </nav>
@@ -46,176 +45,268 @@
 
 <main id="main">
 
+  <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="wrap">
-      <p class="kicker">Industrial systems · Embedded · AI</p>
-      <h1>I build software that talks<br>to machines.</h1>
-      <p class="lede">
-        CNC machine tools, the serial protocols that feed them, the tablets and desktops that drive
-        those protocols, and the AI that helps fix the machine when it stops. C++, Python, and the
-        parts of a stack that break when real hardware is on the other end.
-      </p>
-      <p class="meta">
-        <span class="pill pill-on">Open to remote roles worldwide</span>
-        <span class="pill">Based in Brazil</span>
-      </p>
-      <p class="cta">
-        <a class="btn btn-primary" href="#work">See the work</a>
-        <a class="btn" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
-      </p>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Monte Alto, Brazil</p>
+        <h1>I build software that<br>talks to machines.</h1>
+        <p class="lede">
+          I am the developer behind the systems of a CNC maintenance company. I wrote everything
+          from the engine that streams programs down the serial port to the AI assistant that helps
+          a technician at 2&nbsp;AM. Alone, from scratch, and in use every day.
+        </p>
+        <p class="meta">
+          <span class="pill pill-on">Open to opportunities</span>
+          <span class="pill">C++ · Qt · Python · Flutter</span>
+        </p>
+        <p class="cta">
+          <a class="btn btn-primary" href="#work">See what I built</a>
+          <a class="btn" href="#demos">Try it now</a>
+        </p>
+      </div>
+      <div class="avatar-ph" aria-hidden="true">your photo<br>goes here</div>
     </div>
   </section>
 
+  <!-- ============ VITRINE ============ -->
   <section class="band">
     <div class="wrap">
-      <h2 class="band-title">One machine, three problems</h2>
+      <h2 class="band-title">The software, running</h2>
       <p class="band-lede">
-        A CNC machine needs programs sent to it, needs a way to send them that isn’t a laptop on a cart,
-        and needs fixing when it throws an alarm at 2&nbsp;AM. I built all three sides at SMI, where they are in daily use.
+        Real screens from the DNC in daily use at SMI — not a mockup.
       </p>
 
-      <figure class="diagram">
-        <svg viewBox="0 0 880 260" role="img" aria-labelledby="diagram-title diagram-desc">
-          <title id="diagram-title">How the three projects fit together</title>
-          <desc id="diagram-desc">A desktop DNC engine and an Android tablet app both send G-code over RS-232 to a CNC machine; a RAG assistant answers maintenance questions about the same machine from a phone.</desc>
+      <div class="shots">
+        <figure class="shot">
+          <img src="./assets/dnc-operacao.png" alt="SMI DNC operation screen: loaded program, session status, effective rate and RS-232 signal LEDs" loading="lazy">
+          <figcaption>
+            <b>Operation</b>
+            A program loaded and ready to send. On the right, the eight RS-232 line signals monitored
+            live — they are how the software knows whether the machine is keeping up.
+          </figcaption>
+        </figure>
 
-          <!-- desktop -->
-          <rect class="node" x="12" y="24" width="196" height="66" rx="10"/>
-          <text class="node-t" x="110" y="52">dnc-serial-engine</text>
-          <text class="node-s" x="110" y="72">C++17 · Qt · desktop</text>
-
-          <!-- android -->
-          <rect class="node" x="12" y="146" width="196" height="66" rx="10"/>
-          <text class="node-t" x="110" y="174">dnc-android</text>
-          <text class="node-s" x="110" y="194">Qt6 · QML · USB OTG</text>
-
-          <!-- arrows into serial -->
-          <path class="edge" d="M208 57 H286 Q300 57 300 71 V110"/>
-          <path class="edge" d="M208 179 H286 Q300 179 300 165 V150"/>
-          <text class="edge-t" x="252" y="46">G-code</text>
-          <text class="edge-t" x="252" y="204">G-code</text>
-
-          <!-- rs232 -->
-          <rect class="node node-alt" x="292" y="110" width="166" height="40" rx="8"/>
-          <text class="node-t sm" x="375" y="135">RS-232 · flow control</text>
-
-          <path class="edge" d="M458 130 H548"/>
-          <polygon class="head" points="548,124 562,130 548,136"/>
-
-          <!-- cnc -->
-          <rect class="node node-machine" x="566" y="86" width="150" height="88" rx="10"/>
-          <text class="node-t" x="641" y="122">CNC machine</text>
-          <text class="node-s" x="641" y="142">Fanuc · Siemens</text>
-          <text class="node-s" x="641" y="158">· legacy controls</text>
-
-          <!-- alarm up to maia -->
-          <path class="edge dash" d="M641 86 V44 H768"/>
-          <polygon class="head" points="768,38 782,44 768,50"/>
-          <text class="edge-t" x="700" y="34">alarm code</text>
-
-          <rect class="node node-ai" x="700" y="196" width="168" height="52" rx="10"/>
-          <text class="node-t sm" x="784" y="218">maia-cnc-assistant</text>
-          <text class="node-s" x="784" y="236">RAG · FastAPI · Flutter</text>
-
-          <path class="edge dash" d="M784 196 V60"/>
-          <text class="edge-t rot" x="798" y="130">answer</text>
-        </svg>
-      </figure>
+        <figure class="shot">
+          <img src="./assets/dnc-rs232.png" alt="SMI DNC RS-232 settings: baud rate, parity, flow control, EOF, buffers and timing" loading="lazy">
+          <figcaption>
+            <b>Per-machine settings</b>
+            Every CNC wants a different combination. Baud, parity, flow control, end-of-file
+            character, buffer sizes, and signal polling every 1&nbsp;ms.
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
+  <!-- ============ PROJETOS ============ -->
   <section id="work" class="wrap section">
-    <h2 class="sec-title">Selected work</h2>
-    <p class="sec-note">All three are in daily use at SMI — running real work on real machines, though not yet sold as products — and are published with the company's permission.</p>
+    <h2 class="sec-title">What I built</h2>
+    <p class="sec-note">
+      Nine systems. The first four are open source — click a name to read the code.
+    </p>
 
-    <article class="proj">
-      <header class="proj-h">
-        <h3><a href="https://github.com/dev-kaiki/dnc-serial-engine" target="_blank" rel="noopener">dnc-serial-engine</a></h3>
-        <p class="tags"><span>C++17</span><span>Qt</span><span>CMake</span><span>RS-232</span></p>
-      </header>
-      <p class="proj-lede">
-        An RS-232 DNC engine that streams G-code to CNC controllers — fast enough to be useful,
-        slow enough never to drop a block mid-cut.
-      </p>
-      <p>
-        A controller from the 1980s has a few kilobytes of buffer and no way to report how full it is.
-        You get one bit of backpressure, and it arrives late. Send too fast and the machine silently
-        drops characters while cutting steel; send too slow and drip-feeding a program larger than the
-        machine's memory stops being viable. The engine treats flow control as a <strong>control loop</strong>:
-        chunk size grows while the machine drains and downshifts the moment <code>XOFF</code> arrives early.
-      </p>
-      <p class="proj-hi">
-        The <a href="https://github.com/dev-kaiki/dnc-serial-engine/tree/main/docs/engineering-log" target="_blank" rel="noopener">engineering log</a>
-        documents the real debugging history on live machines — including the overflow fix that created a
-        throughput ceiling, and the ceiling fix that brought back mid-program choking.
-      </p>
-      <p class="proj-links">
-        <a class="btn btn-sm" href="https://github.com/dev-kaiki/dnc-serial-engine" target="_blank" rel="noopener">Repository ↗</a>
-        <img class="badge" alt="build status" src="https://github.com/dev-kaiki/dnc-serial-engine/actions/workflows/build.yml/badge.svg">
-      </p>
-    </article>
+    <p class="subhead">Shop floor</p>
+    <div class="pgrid">
 
-    <article class="proj">
-      <header class="proj-h">
-        <h3><a href="https://github.com/dev-kaiki/dnc-android" target="_blank" rel="noopener">dnc-android</a></h3>
-        <p class="tags"><span>Qt 6</span><span>QML</span><span>C++17</span><span>JNI</span><span>USB serial</span></p>
-      </header>
-      <p class="proj-lede">
-        The same engine on a tablet bolted to the machine — reaching RS-232 through USB OTG, an FTDI
-        chip and a JNI bridge, because Android has no serial port.
-      </p>
-      <p>
-        The transmission engine was ported <em>unchanged</em> behind an extracted <code>ISerialPort</code>
-        interface: throwing it away would have discarded every bench session that tuned it. Getting it to
-        send took finding five faults that produced <strong>no visible error</strong> — a zero read-timeout
-        parking the USB reader thread so writes were silently swallowed, a signal poller running 1000
-        control transfers per second against the writer with no lock, and a flow-control request the FTDI
-        library rejected on a name mismatch while continuing as if it had worked.
-      </p>
-      <p class="proj-hi">
-        The last one was confirmed by reading the library's bytecode:
-        <code>controlTransfer(0x40, 2, 0x1311, port|0x0400)</code> is <code>SIO_SET_FLOW_CTRL</code> with
-        <code>SIO_XON_XOFF_HS</code> — byte for byte what the Windows driver writes.
-      </p>
-      <p class="proj-links">
-        <a class="btn btn-sm" href="https://github.com/dev-kaiki/dnc-android" target="_blank" rel="noopener">Repository ↗</a>
-      </p>
-    </article>
+      <article class="card">
+        <div class="card-h">
+          <h3><a href="https://github.com/dev-kaiki/dnc-serial-engine" target="_blank" rel="noopener">dnc-serial-engine</a></h3>
+          <span class="badge-state is-live">daily use</span>
+        </div>
+        <p class="tags"><span>C++17</span><span>Qt</span><span>RS-232</span></p>
+        <p>Streams G-code to CNC controllers without dropping a character — and without being slow.</p>
+        <details class="more">
+          <summary>Why this is hard</summary>
+          <div class="more-body">
+            <p>
+              A controller from the 1980s has a few kilobytes of buffer and no way to say how full
+              it is. You get one warning — <code>XOFF</code> — and it arrives late.
+            </p>
+            <p>
+              Too fast and the machine silently drops characters while cutting steel. Too slow and a
+              40-minute job becomes four hours. The engine treats this as a <strong>control loop</strong>:
+              it speeds up while the machine drains and backs off the instant <code>XOFF</code> arrives.
+            </p>
+            <p>
+              The <a href="https://github.com/dev-kaiki/dnc-serial-engine/tree/main/docs/engineering-log" target="_blank" rel="noopener">engineering log</a>
+              records the debugging done on live machines — including the fix that created the next problem.
+            </p>
+          </div>
+        </details>
+      </article>
 
-    <article class="proj">
-      <header class="proj-h">
-        <h3><a href="https://github.com/dev-kaiki/maia-cnc-assistant" target="_blank" rel="noopener">maia-cnc-assistant</a></h3>
-        <p class="tags"><span>Python</span><span>FastAPI</span><span>RAG</span><span>pgvector</span><span>Flutter</span></p>
-      </header>
-      <p class="proj-lede">
-        A RAG assistant over a company's technical archive, reaching technicians through a Flutter app
-        and WhatsApp.
-      </p>
-      <p>
-        When a controller throws an alarm at 2&nbsp;AM the answer usually exists — in a 400-page PDF nobody
-        can search, or in the head of the one technician who is asleep. Industrial maintenance breaks
-        generic RAG in specific ways, and most of the codebase is the response: a multi-stage answer
-        pipeline with an explicit <strong>safety policy</strong> (a hallucinated procedure on a live machine
-        injures someone), Drive ingestion gated behind a <strong>human review queue</strong>, and
-        <strong>cost guards</strong> at request, daily and monthly level so a retry loop cannot burn the budget
-        overnight.
-      </p>
-      <p class="proj-hi">
-        Provider migration is done with shadow wrappers that run the new path alongside the live one and
-        log the differences — verified against real traffic before being switched on.
-      </p>
-      <p class="proj-links">
-        <a class="btn btn-sm" href="https://github.com/dev-kaiki/maia-cnc-assistant" target="_blank" rel="noopener">Repository ↗</a>
-      </p>
-    </article>
+      <article class="card">
+        <div class="card-h">
+          <h3><a href="https://github.com/dev-kaiki/dnc-android" target="_blank" rel="noopener">dnc-android</a></h3>
+          <span class="badge-state is-live">daily use</span>
+        </div>
+        <p class="tags"><span>Qt 6</span><span>QML</span><span>JNI</span></p>
+        <p>The same engine on a tablet bolted to the machine, replacing the laptop on a cart.</p>
+        <details class="more">
+          <summary>The five invisible faults</summary>
+          <div class="more-body">
+            <p>
+              Android has no serial port. Reaching RS-232 means USB OTG, an FTDI chip and a JNI
+              bridge into a Java library.
+            </p>
+            <p>
+              Receiving worked immediately. Sending did not — and <strong>none of the five causes
+              raised an error</strong>: a zeroed timeout parked the reader thread so writes vanished
+              silently; a poller fought for the connection a thousand times a second with no lock; and a
+              flow-control request was rejected over a name mismatch, then carried on as if it had worked.
+            </p>
+            <p>
+              I confirmed that last one by reading the bytecode of the library itself.
+            </p>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-h">
+          <h3><a href="https://github.com/dev-kaiki/esp32-dnc-firmware" target="_blank" rel="noopener">esp32-dnc-firmware</a></h3>
+          <span class="badge-state">retired</span>
+        </div>
+        <p class="tags"><span>FreeRTOS</span><span>ESP32</span></p>
+        <p>Before the tablet: an ESP32 with an embedded web UI and a microSD card inside the panel.</p>
+        <details class="more">
+          <summary>What this version left behind</summary>
+          <div class="more-body">
+            <p>
+              Six FreeRTOS tasks and lock-free ring buffers separating the serial line from the card
+              and the web server — so a slow SD write could never interrupt the byte stream feeding
+              the machine.
+            </p>
+            <p>
+              The tablet replaced the device, but the firmware stays public: it is the same problem
+              solved on bare metal.
+            </p>
+          </div>
+        </details>
+      </article>
+
+    </div>
+
+    <p class="subhead">Artificial intelligence</p>
+    <div class="pgrid">
+
+      <article class="card">
+        <div class="card-h">
+          <h3><a href="https://github.com/dev-kaiki/maia-cnc-assistant" target="_blank" rel="noopener">maia-cnc-assistant</a></h3>
+          <span class="badge-state is-live">daily use</span>
+        </div>
+        <p class="tags"><span>Python</span><span>FastAPI</span><span>RAG</span><span>Flutter</span></p>
+        <p>MAIA answers maintenance questions from the company technical archive, through an app and WhatsApp.</p>
+        <details class="more">
+          <summary>Why this is not an ordinary chatbot</summary>
+          <div class="more-body">
+            <p>
+              When a controller throws an alarm at 2&nbsp;AM the answer exists — in a 400-page PDF
+              nobody can search, or in the head of the technician who is asleep.
+            </p>
+            <p>
+              A wrong answer here injures someone, so an explicit <strong>safety policy</strong> runs
+              before replying. A document only enters the index after <strong>human review</strong>. And
+              there are AI <strong>cost ceilings</strong> per request, per day and per month, so a retry
+              loop cannot burn the budget overnight.
+            </p>
+            <p>118 automated tests run on every commit.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-h">
+          <h3><span class="nolink">SMI IA</span></h3>
+          <span class="badge-state">prototype</span>
+        </div>
+        <p class="tags"><span>Flutter</span><span>Supabase</span><span>OpenAI</span></p>
+        <p>The first technical-chat experiment, which became the groundwork for MAIA.</p>
+      </article>
+
+    </div>
+
+    <p class="subhead">Management and field work</p>
+    <div class="pgrid pgrid-3">
+
+      <article class="card">
+        <div class="card-h">
+          <h3><span class="nolink">SMI Files</span></h3>
+          <span class="badge-state is-test">in testing</span>
+        </div>
+        <p class="tags"><span>Flutter</span><span>Supabase</span></p>
+        <p>Work orders, time entries, signed checklists and per-order media — all in a single app.</p>
+        <details class="more">
+          <summary>Offline-first, and why</summary>
+          <div class="more-body">
+            <p>
+              A technician inside a factory has no signal. The app writes locally and keeps a
+              <strong>sync queue with automatic retry</strong>, so the work never depends on the network.
+            </p>
+            <p>
+              Before this I had three separate apps. I consolidated them into one when it became clear
+              that keeping three of them diverging was worse than rewriting.
+            </p>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-h">
+          <h3><span class="nolink">Checklist SMI</span></h3>
+          <span class="badge-state">superseded</span>
+        </div>
+        <p class="tags"><span>Flutter</span><span>PDF</span></p>
+        <p>Field checklists with digital signature, photos and a PDF report generated on the device.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-h">
+          <h3><span class="nolink">Controle SMI</span></h3>
+          <span class="badge-state">superseded</span>
+        </div>
+        <p class="tags"><span>Flutter</span></p>
+        <p>Technician and customer management — the first step before consolidation.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-h">
+          <h3><span class="nolink">Relatórios SMI</span></h3>
+          <span class="badge-state">superseded</span>
+        </div>
+        <p class="tags"><span>Flutter</span></p>
+        <p>Service reports for the industrial maintenance team.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-h">
+          <h3><span class="nolink">MilkDim</span></h3>
+          <span class="badge-state">prototype</span>
+        </div>
+        <p class="tags"><span>Flutter</span><span>Supabase</span></p>
+        <p>Ordering app and admin panel for a food distributor.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-h">
+          <h3><span class="nolink">FBB</span></h3>
+          <span class="badge-state">prototype</span>
+        </div>
+        <p class="tags"><span>Flutter</span></p>
+        <p>Quotes and orders — outside the industrial world, to prove the stack travels.</p>
+      </article>
+
+    </div>
   </section>
 
+  <!-- ============ DEMOS ============ -->
   <section id="demos" class="band">
     <div class="wrap">
       <h2 class="sec-title">Try it yourself</h2>
       <p class="band-lede">
-        Two of the problems below are easier to feel than to read about. Both simulations run
-        entirely in your browser — nothing is sent anywhere.
+        Two of the problems above are easier to feel than to read about. They run in your browser —
+        nothing is sent anywhere.
       </p>
       <noscript>
         <p class="verdict">These demos need JavaScript enabled.</p>
@@ -225,44 +316,50 @@
     </div>
   </section>
 
-  <section id="stack" class="band">
-    <div class="wrap">
-      <h2 class="sec-title">Stack</h2>
-      <div class="grid">
-        <div class="cell">
-          <h3>Systems &amp; embedded</h3>
-          <p>C++17 · Qt · QML · Android (JNI, USB host) · RS-232 and serial protocols · FreeRTOS · CMake</p>
-        </div>
-        <div class="cell">
-          <h3>Backend &amp; AI</h3>
-          <p>Python · FastAPI · PostgreSQL · pgvector · RAG · OpenAI &amp; Gemini · Docker</p>
-        </div>
-        <div class="cell">
-          <h3>Apps</h3>
-          <p>Flutter (Android, iOS, web, desktop) · TypeScript</p>
-        </div>
-        <div class="cell">
-          <h3>Ops</h3>
-          <p>Caddy · GitHub Actions · versioned SQL migrations · backup and restore</p>
-        </div>
-      </div>
-      <p class="note">
-        I ship things that run unattended where failure is expensive, and I document what I got wrong on
-        the way there. The interesting part of a system is usually the constraint nobody wrote down — the
-        controller that lies about its buffer state, the archive nobody can search, the budget a retry
-        loop can burn through overnight.
-      </p>
-    </div>
+  <!-- ============ STACK ============ -->
+  <section class="wrap section">
+    <h2 class="sec-title">What I work with</h2>
+    <p class="chips">
+      <span class="chip chip-h">C++17</span>
+      <span class="chip chip-h">Qt / QML</span>
+      <span class="chip chip-h">Python</span>
+      <span class="chip chip-h">FastAPI</span>
+      <span class="chip chip-h">Flutter</span>
+      <span class="chip">RS-232</span>
+      <span class="chip">USB host / JNI</span>
+      <span class="chip">FreeRTOS</span>
+      <span class="chip">ESP32</span>
+      <span class="chip">PostgreSQL</span>
+      <span class="chip">pgvector</span>
+      <span class="chip">RAG</span>
+      <span class="chip">Supabase</span>
+      <span class="chip">Docker</span>
+      <span class="chip">Caddy</span>
+      <span class="chip">CMake</span>
+      <span class="chip">GitHub Actions</span>
+    </p>
+    <p class="note">
+      Studying <strong>Industrial Automation</strong> (FATEC), on top of <strong>Systems
+      Development</strong> (ETEC) and <strong>Electrical Control Systems</strong> (SENAI) — which is why
+      I am comfortable on both sides of the machine.
+    </p>
   </section>
 
-  <section id="contact" class="wrap section contact">
-    <h2 class="sec-title">Get in touch</h2>
-    <p class="lede">Open to remote engineering roles worldwide — backend, embedded and industrial systems, or applied AI.</p>
-    <p class="cta">
-      <a class="btn btn-primary" href="mailto:kaikiiquadros091o@gmail.com">Email me</a>
-      <a class="btn" href="https://www.linkedin.com/in/kaiki-ferreira/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
-    </p>
+  <!-- ============ CONTATO ============ -->
+  <section id="contact" class="band">
+    <div class="wrap">
+      <h2 class="sec-title">Get in touch</h2>
+      <p class="lede">
+        If you have a machine that needs to talk to a computer, or a system that needs to exist and
+        nobody wants to build, chances are I have solved something close to it.
+      </p>
+      <p class="cta">
+        <a class="btn btn-primary" href="mailto:kaikiiquadros091o@gmail.com">Email me</a>
+        <a class="btn" href="https://wa.me/5516991666951" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="https://www.linkedin.com/in/kaiki-ferreira/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/dev-kaiki" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </div>
   </section>
 
 </main>
@@ -273,8 +370,12 @@
   </div>
 </footer>
 
-<script src="./demos.js"></script>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button class="lb-close" id="lb-close" aria-label="Close">×</button>
+  <img id="lb-img" alt="">
+</div>
 
+<script src="./demos.js"></script>
 <script>
 (function () {
   var root = document.documentElement;
@@ -294,6 +395,18 @@
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // lightbox das capturas
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img');
+  function close() { lb.classList.remove('is-open'); lbImg.removeAttribute('src'); }
+  Array.prototype.forEach.call(document.querySelectorAll('.shot img'), function (img) {
+    img.addEventListener('click', function () {
+      lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('is-open');
+    });
+  });
+  document.getElementById('lb-close').addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
 })();
 </script>
 

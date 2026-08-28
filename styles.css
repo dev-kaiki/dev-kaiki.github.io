@@ -313,16 +313,23 @@ h1 {
   body { font-size: 16px; }
   .hero { padding: 60px 0 52px; }
   .section, .band { padding: 52px 0; }
-  .nav { gap: 14px; font-size: 14px; }
+  .nav { gap: 13px; font-size: 13.5px; }
   .nav .ext { display: none; }
   .lang { font-size: 11.5px; }
-  .lang > * { padding: 5px 7px; }
+  .lang > * { padding: 5px 6px; }
+  .row { gap: 12px; }
   .brand { font-size: 0; gap: 0; }
   .brand-mark { width: 13px; height: 13px; }
 }
 
-@media (max-width: 400px) {
-  .nav a:not(.ext) { font-size: 13.5px; }
+/* Abaixo de 430px a barra nao comporta 3 links + idioma + tema sem empurrar
+   o botao de tema para fora da viewport: o link de contato sai (a secao
+   continua alcancavel rolando e pelo rodape). */
+@media (max-width: 430px) {
+  .nav { gap: 11px; font-size: 13px; }
+  .nav a[href="#contact"] { display: none; }
+  .row { gap: 9px; }
+  .wrap { padding: 0 16px; }
 }
 
 /* ---------- interactive demos ---------- */
@@ -447,4 +454,126 @@ h1 {
   #gc-src { min-height: 190px; }
   .demo { padding: 16px; }
   .stats { gap: 18px; }
+}
+
+/* ================= v2: vitrine visual e projetos compactos ================= */
+
+/* --- hero mais pessoal --- */
+.hero-grid {
+  display: grid; gap: 34px; align-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr auto; gap: 48px; }
+}
+.avatar {
+  width: 168px; height: 168px; border-radius: 50%;
+  object-fit: cover; border: 3px solid var(--accent);
+  display: block;
+}
+.avatar-ph {
+  width: 168px; height: 168px; border-radius: 50%;
+  border: 2px dashed var(--line);
+  display: grid; place-items: center; text-align: center;
+  color: var(--fg-faint); font-size: 12px; padding: 18px;
+  font-family: var(--mono); line-height: 1.5;
+}
+
+/* --- vitrine: capturas reais --- */
+.shots { display: grid; gap: 26px; grid-template-columns: 1fr; }
+/* Uma coluna de proposito: a 450px a interface capturada fica ilegivel, e a
+   captura so convence se der para ler o que esta na tela. */
+
+.shot {
+  margin: 0; border: 1px solid var(--line);
+  border-radius: var(--radius); overflow: hidden;
+  background: var(--bg);
+}
+.shot img {
+  display: block; width: 100%; height: auto;
+  border-bottom: 1px solid var(--line);
+  cursor: zoom-in;
+}
+.shot figcaption {
+  padding: 13px 16px; font-size: 14px; color: var(--fg-muted);
+}
+.shot figcaption b { color: var(--fg); font-weight: 600; display: block; margin-bottom: 2px; }
+
+/* lightbox */
+.lb {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(8,10,14,.93);
+  display: none; place-items: center; padding: 3vmin;
+}
+.lb.is-open { display: grid; }
+.lb img { max-width: 100%; max-height: 92vh; border-radius: 6px; }
+.lb-close {
+  position: absolute; top: 14px; right: 18px;
+  background: transparent; border: 0; cursor: pointer;
+  color: #fff; font-size: 30px; line-height: 1; padding: 6px 12px;
+}
+
+/* --- grid de projetos --- */
+.pgrid { display: grid; gap: 18px; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .pgrid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .pgrid.pgrid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+.card {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px; background: var(--bg);
+  display: flex; flex-direction: column; gap: 9px;
+}
+.band .card { background: var(--bg); }
+.card-h { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.card-h h3 { margin: 0; font-size: 1.02rem; letter-spacing: -.015em; }
+.card-h h3 a { font-family: var(--mono); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent); }
+.card-h h3 a:hover { color: var(--accent); }
+.card-h h3 span.nolink { font-family: var(--mono); font-weight: 600; }
+.card p { margin: 0; font-size: 14.5px; color: var(--fg-muted); }
+.card .tags span { font-size: 11px; padding: 2px 7px; }
+
+.badge-state {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .04em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--fg-faint);
+  white-space: nowrap;
+}
+.badge-state.is-live { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 35%, transparent); background: var(--ok-bg); }
+.badge-state.is-test { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, transparent); background: var(--accent-bg); }
+
+/* --- detalhes recolhidos --- */
+details.more { margin-top: 4px; }
+details.more > summary {
+  cursor: pointer; list-style: none;
+  font-size: 13.5px; color: var(--accent);
+  font-family: var(--mono); padding: 3px 0;
+}
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::before { content: "+ "; font-weight: 700; }
+details.more[open] > summary::before { content: "– "; }
+details.more > summary:hover { text-decoration: underline; }
+details.more .more-body {
+  padding-top: 9px; font-size: 14.5px; color: var(--fg-muted);
+  line-height: 1.6;
+}
+details.more .more-body p { margin: 0 0 10px; }
+details.more .more-body p:last-child { margin-bottom: 0; }
+
+/* --- chips de stack --- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 30px; }
+.chip {
+  font-family: var(--mono); font-size: 12.5px;
+  padding: 6px 12px; border-radius: 7px;
+  border: 1px solid var(--line); background: var(--bg);
+  color: var(--fg-muted);
+}
+.chip-h {
+  background: var(--accent); border-color: var(--accent);
+  color: var(--accent-fg); font-weight: 500;
+}
+
+.subhead {
+  font-size: 12px; font-family: var(--mono); text-transform: uppercase;
+  letter-spacing: .09em; color: var(--fg-faint);
+  margin: 30px 0 12px;
 }

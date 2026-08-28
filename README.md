@@ -13,6 +13,7 @@ GitHub Pages redeploys automatically.
 | `pt.html` | Portuguese (pt-BR) |
 | `styles.css` | shared by both pages |
 | `demos.js` | the two interactive demos, shared by both pages |
+| `assets/` | real screenshots of the software running |
 | `favicon.svg` | |
 
 **`demos.js` builds its own markup** and picks the language from `<html lang>`, so the demo
