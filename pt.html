@@ -349,41 +349,6 @@
       </article>
 
     </div>
-
-    <p class="subhead">Backend</p>
-    <div class="pgrid">
-
-      <article class="card">
-        <div class="card-h">
-          <h3><a href="https://github.com/dev-kaiki/authkit" target="_blank" rel="noopener">authkit</a></h3>
-          <span class="badge-state">protótipo</span>
-        </div>
-        <p class="tags"><span>NestJS</span><span>Prisma</span><span>PostgreSQL</span><span>Next.js</span></p>
-        <p>Cadastro, login e sessão — a peça que todo sistema precisa e onde as falhas são silenciosas.</p>
-        <details class="more">
-          <summary>Com o que se parece um token roubado</summary>
-          <div class="more-body">
-            <p>
-              O refresh token é guardado apenas como hash SHA-256, então um vazamento do banco não
-              entrega nada que possa ser reapresentado, e cada uso rotaciona o token.
-            </p>
-            <p>
-              Refresh token é de uso único, então apresentá-lo duas vezes significa que duas partes
-              o têm. É com isso que um token roubado se parece, e o servidor trata assim: revoga a
-              <strong>família inteira de tokens</strong> do usuário, encerrando todas as sessões em
-              vez de deixar o ladrão trafegando ao lado do dono.
-            </p>
-            <p>
-              O login confere contra um hash-chamariz quando o e-mail não existe, para que errar o
-              endereço e errar a senha levem o mesmo tempo — senão o tempo de resposta sozinho
-              lista quem tem conta. Autenticação e papel são guards globais: rota criada depois
-              nasce protegida, e só sai disso com um <code>@Public()</code> explícito.
-            </p>
-          </div>
-        </details>
-      </article>
-
-    </div>
   </section>
 
   <!-- ============ DEMOS ============ -->
